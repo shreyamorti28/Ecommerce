@@ -4,6 +4,7 @@ import Popular from '../Popular/Popular'
 import Offers from '../Offers/Offers'
 import New_collection from '../New_collection/New_collection'
 import NewsLetter from '../NewsLetter/NewsLetter'
+import Footer from '../Footer/Footer'
 
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
       <Offers/>
       <New_collection/>
       <NewsLetter/>
+      
     </div>
   )
 }
