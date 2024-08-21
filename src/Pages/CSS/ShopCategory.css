@@ -1,0 +1,70 @@
+.shop-category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Consistent gap for better spacing */
+  margin-bottom: 50px;
+}
+
+.shop-category-banner {
+  display: block;
+  width: 82%;
+  margin: 30px auto;
+}
+.shop-category img {
+  width: 100%;
+}
+
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Consistent gap for spacing between items */
+}
+
+.shopcategory-indexSort {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px; /* Added gap for consistency */
+  width: 100%;
+  max-width: 1200px;
+}
+
+.shopcategory-sort {
+  padding: 10px 20px;
+  border-radius: 40px;
+  border: 1px solid #888;
+  font-family: 'Poppins', sans-serif; /* Consistent font */
+  font-size: 1rem; /* Adjusted font size */
+  color: #171717; /* Consistent color */
+}
+
+.shopcategory-indexSort p span {
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif; /* Consistent font */
+  color: #171717; /* Consistent color */
+}
+.new-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #171717;
+  font-family: 'Poppins', sans-serif;
+}   
+
+
+.old-price {
+  font-size: 1rem;
+  color: #a0a0a0;
+  text-decoration: line-through;
+  font-family: 'Roboto', sans-serif;
+}
+.shopcategory-products{
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ; 
+  gap:50px;
+  
+  
+}
