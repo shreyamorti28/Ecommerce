@@ -6,6 +6,17 @@ import p5_img from './stripped_shirt.jpeg'
 import p6_img from './printed_tshirt.jpg'
 import p7_img from './printed_tshirt3.png'
 import p8_img from './stripped_shirt2.png.jpg'
+import p9_img from './white_sportshoes.png'
+import p10_img from './Trek_shoes.png'
+import p11_img from './baggy_jeans.png'
+import p12_img from './blue_pant.png'
+import p13_img from './black_jeans3.png'
+import p14_img from './blue_jeans.png'
+import p15_img from './dark_blue_jeans.png'
+import p17_img from './light_green.png'
+import p18_img from './light_grey_pant.png'
+import p19_img from './green_jeans.png'
+
 
 
 let data_product = [
@@ -73,6 +84,97 @@ let data_product = [
         new_price:500,
         old_price:650,
     },
+    {
+        id:9,
+        name:"white sport shoes",
+        category:"Shoes",
+        image:p9_img,
+        new_price:500,
+        old_price:650,
+
+    },
+    {
+        id:9,
+        name:"trek shoes",
+        category:"Shoes",
+        image:p10_img,
+        new_price:500,
+        old_price:650,
+
+    },
+    {
+        id:9,
+        name:"baggy jeans",
+        category:"Jeans",
+        image:p11_img,
+        new_price:500,
+        old_price:650,
+
+    },
+    {
+        id:9,
+        name:"blue pants",
+        category:"Jeans",
+        image:p12_img,
+        new_price:500,
+        old_price:650,
+
+    },
+    {
+        id:9,
+        name:"black jeans",
+        category:"Jeans",
+        image:p13_img,
+        new_price:500,
+        old_price:650,
+
+    },
+    {
+        id:9,
+        name:"blue jeans",
+        category:"Jeans",
+        image:p14_img,
+        new_price:500,
+        old_price:650,
+
+    },
+    {
+        id:9,
+        name:"dark blue jeans",
+        category:"Jeans",
+        image:p15_img,
+        new_price:500,
+        old_price:650,
+
+    },
+    {
+        id:9,
+        name:"white sport shoes",
+        category:"Jeans",
+        image:p17_img,
+        new_price:500,
+        old_price:650,
+
+    },
+    {
+        id:9,
+        name:"light grey jeans",
+        category:"Jeans",
+        image:p18_img,
+        new_price:500,
+        old_price:650,
+
+    },
+    {
+        id:9,
+        name:"green jeans",
+        category:"Jeans",
+        image:p19_img,
+        new_price:500,
+        old_price:650,
+
+    }
+
 ];
 
 export default data_product;

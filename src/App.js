@@ -12,7 +12,7 @@ import shoes_banner from './components/Assets/shoes_banner.jpg';
 import jeans_banner from './components/Assets/jeans_banner.jpg';
 
 
-function App() {
+function App() {  
   return (
     <div>
       <BrowserRouter>
@@ -21,7 +21,6 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/T-shirt' element={<ShopCategory banner={tshirt_banner} category="T-shirt"/>}/>
         <Route path='/Jeans' element={<ShopCategory banner={jeans_banner} category="Jeans"/>}/>
-        <Route path='/Jackets' element={<ShopCategory category="Jackets"/>}/>
         <Route path='/Shoes' element={<ShopCategory banner={shoes_banner} category="Shoes"/>}/>
         <Route path='/product' element={<Product/>}>
             <Route path=':productId' element={<Product/>}/>
