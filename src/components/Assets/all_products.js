@@ -94,7 +94,7 @@ let data_product = [
 
     },
     {
-        id:9,
+        id:10,
         name:"trek shoes",
         category:"Shoes",
         image:p10_img,
@@ -103,7 +103,7 @@ let data_product = [
 
     },
     {
-        id:9,
+        id:11,
         name:"baggy jeans",
         category:"Jeans",
         image:p11_img,
@@ -112,7 +112,7 @@ let data_product = [
 
     },
     {
-        id:9,
+        id:12,
         name:"blue pants",
         category:"Jeans",
         image:p12_img,
@@ -121,7 +121,7 @@ let data_product = [
 
     },
     {
-        id:9,
+        id:13,
         name:"black jeans",
         category:"Jeans",
         image:p13_img,
@@ -130,7 +130,7 @@ let data_product = [
 
     },
     {
-        id:9,
+        id:14,
         name:"blue jeans",
         category:"Jeans",
         image:p14_img,
@@ -139,7 +139,7 @@ let data_product = [
 
     },
     {
-        id:9,
+        id:15,
         name:"dark blue jeans",
         category:"Jeans",
         image:p15_img,
@@ -148,7 +148,7 @@ let data_product = [
 
     },
     {
-        id:9,
+        id:16,
         name:"white sport shoes",
         category:"Jeans",
         image:p17_img,
@@ -157,7 +157,7 @@ let data_product = [
 
     },
     {
-        id:9,
+        id:17,
         name:"light grey jeans",
         category:"Jeans",
         image:p18_img,
@@ -166,7 +166,7 @@ let data_product = [
 
     },
     {
-        id:9,
+        id:18,
         name:"green jeans",
         category:"Jeans",
         image:p19_img,
