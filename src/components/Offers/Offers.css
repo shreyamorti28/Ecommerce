@@ -1,66 +1,99 @@
+/* Offers.css */
+
+/* Import fonts from Google Fonts or include them in your project */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
+
 .offers {
-    width: 80%; 
-    height: 60vh;
     display: flex;
-    margin: auto;
-    padding: 0 80px; 
-    margin-bottom: 100px; 
-    margin-top: 300px; 
-    background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
-    border-radius: 20px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    
-    
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 80px;
+    background: linear-gradient(90deg, #f7f7f7 0%, #ffffff 100%);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .offers-left {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left:200px;
+    padding: 20px;
+    color: #2c3e50; /* Dark text color to match Hero section */
+    font-family: 'Roboto', sans-serif; /* Consistent font with Hero section */
 }
 
 .offers-left h1 {
-    color: #171717;
-    font-size: 3rem; 
-    font-weight: 600;
+    font-size: 48px; /* Slightly smaller than Hero for balance */
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.1;
+    color: #2c3e50;
+    text-transform: uppercase;
 }
 
 .offers-left p {
-    color: #171717;
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin: 10px 0; 
+    font-size: 20px;
+    color: #34495e;
+    margin-bottom: 25px;
+    line-height: 1.4;
 }
 
 .offers-left button {
-    width: 250px; 
-    height: 60px; 
-    border-radius: 30px; 
-    background: #ff4141;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #e94e77; /* Bright color for the button */
+    padding: 15px 30px;
+    border-radius: 30px;
     border: none;
-    color: white;
-    font-size: 1.25rem; 
-    font-weight: 500;
-    margin-top: 20px; 
     cursor: pointer;
-    transition: background 0.3s ease; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .offers-left button:hover {
-    background: #e34040; 
+    background-color: #d43f66; /* Darker shade for hover effect */
+    color: #ffffff;
 }
 
 .offers-right {
     flex: 1;
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: flex-end;
-    margin-left: 40px; 
+    padding: 20px;
 }
+
 .offers-right img {
-    margin-bottom:50px;
+    width: 100%;
+    max-width: 600px; /* Max width to ensure image scales well */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .offers {
+        flex-direction: column;
+        padding: 30px;
+        text-align: center;
+    }
 
+    .offers-left h1 {
+        font-size: 36px;
+    }
+
+    .offers-left p {
+        font-size: 18px;
+    }
+
+    .offers-left button {
+        font-size: 16px;
+        padding: 12px 25px;
+    }
+
+    .offers-right img {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+}

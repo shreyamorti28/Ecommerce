@@ -1,42 +1,80 @@
-.popular{
-    display:flex;
-    flex-direction:column;
-    align-items: center;
-    gap: 10px;
-    height: 90vh;
-}
-
-.popular h1{
-    color:#171717;
-    font-size:50px;
-    font-weight:600;
-}
-
-.popular hr{
-    width:200px;
-    height:6px;
-    border-radius: 10px;
-    background: #252525;
-
-    
-}
-
+/* Container for the items */
 .popular-item{
-    margin-top:50px;
-    display:flex;
-    gap:20px;
-}
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+    gap: 16px; /* Spacing between items */
+    margin: 0 auto;
+    max-width: 1200px; /* Adjust to your needs */
+    padding: 16px;
+  }
 
-.new-price {
-    font-size: 1.2rem;
-    font-weight: bold;
+.popular h1 {
+    margin-bottom: 10px;
     color: #171717;
-    font-family: 'Poppins', sans-serif;
-}   
+    font-size: 50px;
+    font-weight:600;
+    text-align: center;
+  }
   
-.old-price {
-    font-size: 1rem;
-    color: #a0a0a0;
+  
+  .item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  /* Style for the item image */
+  .item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  /* Title of the item */
+  .item h2 {
+    font-size: 18px;
+    margin: 12px 0;
+    color: #333;
+  }
+  
+  /* Pricing section */
+  .price {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 8px 0;
+  }
+  
+  /* New price style */
+  .new-price {
+    color: #333;
+    margin-right: 8px;
+  }
+  
+  /* Old price style (strikethrough) */
+  .old-price {
+    color: #888;
     text-decoration: line-through;
-    font-family: 'Roboto', sans-serif;
-}
+  }
+  
+  /* Hover effect for the item */
+  .item:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .item-container {
+      grid-template-columns: repeat(2, 1fr); /* 2 items per row on smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .item-container {
+      grid-template-columns: 1fr; /* 1 item per row on very small screens */
+    }
+  }
+  

@@ -1,12 +1,11 @@
 import React from 'react';
 import new_collection from '../Assets/new_collection';
 import Item from '../Item/Item';
-import './New_collection.css'; // Assuming you have some styles for the new collection
+import './New_Collection.css'; // Updated CSS import
 
-const New_collection = () => {
+const NewCollection = () => {
   return (
     <div className='new_collections'>
-      <h1>New Collection</h1>
       <div className="collections">
         {new_collection.map((item, i) => (
           <Item 
@@ -23,4 +22,4 @@ const New_collection = () => {
   );
 }
 
-export default New_collection;
+export default NewCollection;
