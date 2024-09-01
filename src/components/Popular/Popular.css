@@ -65,16 +65,73 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   }
   
-  /* Responsive design for smaller screens */
-  @media (max-width: 768px) {
-    .item-container {
-      grid-template-columns: repeat(2, 1fr); /* 2 items per row on smaller screens */
+  
+  @media (max-width: 1280px) {
+    .popular-item {
+      max-width: 1000px; /* Adjust max width */
+    }
+  
+    .popular h1 {
+      font-size: 45px; /* Adjust font size */
+    }
+  
+    .item h2 {
+      font-size: 17px; /* Adjust item title size */
     }
   }
   
-  @media (max-width: 480px) {
-    .item-container {
-      grid-template-columns: 1fr; /* 1 item per row on very small screens */
+  /* For screens with a max-width of 1024px */
+  @media (max-width: 1024px) {
+    .popular-item {
+      max-width: 800px; /* Adjust max width */
+    }
+  
+    .popular h1 {
+      font-size: 40px; /* Adjust font size */
+    }
+  
+    .item h2 {
+      font-size: 16px; /* Adjust item title size */
+    }
+  }
+  
+  /* For screens with a max-width of 800px */
+  @media (max-width: 800px) {
+    .popular-item {
+      max-width: 600px; /* Adjust max width */
+      gap: 12px; /* Reduce gap between items */
+    }
+  
+    .popular h1 {
+      font-size: 36px; /* Adjust font size */
+    }
+  
+    .item h2 {
+      font-size: 14px; /* Adjust item title size */
+    }
+  
+    .item {
+      padding: 12px; /* Adjust item padding */
+    }
+  }
+  
+  /* For screens with a max-width of 500px */
+  @media (max-width: 500px) {
+    .popular-item {
+      max-width: 100%; /* Full width */
+      gap: 8px; /* Reduce gap further */
+    }
+  
+    .popular h1 {
+      font-size: 30px; /* Adjust font size */
+    }
+  
+    .item h2 {
+      font-size: 12px; /* Adjust item title size */
+    }
+  
+    .item {
+      padding: 10px; /* Adjust item padding */
     }
   }
   

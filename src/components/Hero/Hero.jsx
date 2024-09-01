@@ -1,29 +1,54 @@
-import React from 'react'
-import './Hero.css'
-import hero_image from '../Assets/printed_tshirt3.png'
-import arrow_icon from '../Assets/Arrow.png'
+import React, { useState, useEffect } from 'react';
+import './Hero.css';
+import hero_image1 from '../Assets/purple_tshirt.png';
+import hero_image2 from '../Assets/green_jeans.png';
+import hero_image3 from '../Assets/white_sportshoes.png';
+
+const slides = [
+    {
+        image: hero_image1,
+        heading: "Men Collection",
+        description: "Elevate your style with timeless elegance.",
+        buttonText: "Explore Now",
+    },
+    {
+        image: hero_image2,
+        heading: "Summer Sale",
+        description: "Discover our summer collection and enjoy amazing discounts.",
+        buttonText: "Shop Now",
+    },
+    {
+        image: hero_image3,
+        heading: "New Arrivals",
+        description: "Check out the latest trends and find your perfect fit.",
+        buttonText: "See More",
+    }
+];
 
 const Hero = () => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
+        }, 3000); // Change slide every 3 seconds
+
+        return () => clearInterval(interval);
+    }, []);
+
+    const { image, heading, description, buttonText } = slides[currentIndex];
+
     return (
-        <div className='hero'>
-            <div className='hero-left'>
-                <h2>Men Collection</h2>
-                <div>
-                    <p>Elevate your style with timeless elegance.</p>
-                </div>
+        <div className='hero' style={{ backgroundImage: `url(${image})` }}>
+            <div className='hero-content'>
+                <h2>{heading}</h2>
+                <p>{description}</p>
                 <div className="hero-latest-btn">
-                    <div>Check Out</div>
-                    <img src={arrow_icon} alt=""/>
-
+                    <div>{buttonText}</div>
                 </div>
-
-            </div>
-            <div className='hero-right'>
-                <img src={hero_image} alt=""/>
-
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Hero
+export default Hero;
