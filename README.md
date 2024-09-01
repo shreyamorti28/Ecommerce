@@ -28,4 +28,4 @@ This is a comprehensive e-commerce website built with the MERN stack (MongoDB, E
 - **Authentication:**
   - JSON Web Tokens (JWT)
 - **Deployment:**
-  - Heroku (or your preferred cloud service)
+  - Heroku 
