@@ -11,12 +11,12 @@ const RelatedProducts = () => {
       <div className='relatedproducts-item'>
         {data_product.map((item) => (
           <Item
-            key={item.id} 
-            id={item.id} 
-            name={item.name} 
-            image={item.image} 
-            new_price={item.new_price} 
-            old_price={item.old_price} 
+            key={item.id}
+            id={item.id}
+            name={item.name}
+            image={item.image}
+            new_price={item.new_price}
+            old_price={item.old_price}
           />
         ))}
       </div>
@@ -25,3 +25,4 @@ const RelatedProducts = () => {
 };
 
 export default RelatedProducts;
+    

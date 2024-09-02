@@ -2,6 +2,7 @@ import React from 'react'
 import exclusive_image from '../Assets/exclusive.png'
 import './Offers.css'
 
+
 const Offers = () => {
     return (
         <div className='offers'>

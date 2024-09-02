@@ -1,26 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import './Hero.css';
-import hero_image1 from '../Assets/purple_tshirt.png';
-import hero_image2 from '../Assets/green_jeans.png';
-import hero_image3 from '../Assets/white_sportshoes.png';
+import hero_image1 from '../Assets/shirt.jpg';
+import hero_image2 from '../Assets/dark_blue_jeans.png';
+import hero_image3 from '../Assets/shoes.jpg';
 
 const slides = [
     {
         image: hero_image1,
-        heading: "Men Collection",
-        description: "Elevate your style with timeless elegance.",
+        heading: "Shirt Collection",
+        description: "Stylish comfort in an elegant T-shirt.",
         buttonText: "Explore Now",
     },
     {
         image: hero_image2,
         heading: "Summer Sale",
-        description: "Discover our summer collection and enjoy amazing discounts.",
+        description: "Step up in style with our elegant shoes.",
         buttonText: "Shop Now",
     },
     {
         image: hero_image3,
         heading: "New Arrivals",
-        description: "Check out the latest trends and find your perfect fit.",
+        description: "Sleek, comfortable jeans with a touch of elegance.",
         buttonText: "See More",
     }
 ];
