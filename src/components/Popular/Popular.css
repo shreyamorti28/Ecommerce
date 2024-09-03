@@ -2,7 +2,7 @@
 .popular-item{
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 items per row */
-    gap: 16px; /* Spacing between items */
+    gap: 100px; /* Spacing between items */
     margin: 0 auto;
     max-width: 1200px; /* Adjust to your needs */
     padding: 16px;
@@ -17,7 +17,7 @@
   }
   
   
-  .item {
+  .popular item {
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 16px;

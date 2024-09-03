@@ -8,7 +8,7 @@ const ShopCategory = (props) => {
 
   return (
     <div className='shop-category'>
-      <img className='shopcategory-banner'src={props.banner} alt=""/>
+      <img src={props.banner} alt={`${props.category} banner`} />
       <div className="shopcategory-indexSort">
         <p>
           <span>Showing 1-12</span> out of 36 products
@@ -30,11 +30,7 @@ const ShopCategory = (props) => {
         })}
 
       </div>
-    
-    <div className='shopcategory-loadmore'>
-      Explore more
-      </div>
-  </div>
+    </div>
   );
 };
 
