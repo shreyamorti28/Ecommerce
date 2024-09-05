@@ -18,7 +18,7 @@
 
 .nav-menu {
     display: flex;
-    list-style: none;
+    list-style: none;   
     gap: 50px;
     align-items: center;
 }
@@ -83,10 +83,10 @@
     margin-right: 10px; /* Space between image and text */
 }
 
-.nav-menu li .dropdown-content p {
-    font-size: 14px;
+.dropdown-content p {
     margin: 0;
-    color: #666;
+    color: #333;
+    font-size: 16px;
 }
 
 .nav-menu hr {
@@ -99,6 +99,7 @@
 
 .nav-dropdown {
     display: none;
+    cursor: pointer;
 }
 
 /* Additional Media Queries */

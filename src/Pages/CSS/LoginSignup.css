@@ -8,6 +8,8 @@
   align-items: center;
   min-height: 100vh; /* Full viewport height */
   background-color: #fce4ec; /* Very light pink background color for the page */
+  margin-top: 50px;
+
 }
 
 /* Main container for the form */
