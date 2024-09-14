@@ -1,0 +1,30 @@
+.listproduct-allproducts {
+    display: block;           /* Ensure the div is block-level */
+    background-color: #f9f9f9; /* Give it a light background color */
+    padding: 10px;             /* Add padding for visibility */
+    margin-top: 20px;          /* Add some space at the top */
+  }
+  
+  .listproduct-format-main {
+    display: grid;             /* Use grid or flex to align items */
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr; /* Adjust the number of columns based on your layout */
+    gap: 10px;
+    align-items: center;       /* Vertically center the items */
+  }
+  
+  .listproduct-format {
+    border-bottom: 1px solid #ddd; /* Add a line between each product */
+    padding: 10px 0;              /* Add padding between product rows */
+  }
+  
+  .listproduct-product-icon {
+    width: 50px;                  /* Set a size for the product image */
+    height: 50px;
+  }
+  
+  .listproduct-remove-icon {
+    width: 20px;                  /* Size for the remove icon */
+    height: 20px;
+    cursor: pointer;              /* Change cursor to indicate action */
+  }
+  

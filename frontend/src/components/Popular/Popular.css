@@ -4,7 +4,7 @@
   grid-template-columns: repeat(3, 1fr); /* 3 items per row */
   gap: 60px; /* Spacing between items */
   margin: 0 auto;
-  width: 1200px; /* Container width */
+  width: 1600px; /* Container width */
 }
 
 /* Heading style */
@@ -17,23 +17,23 @@
   font-family:'Playfair Display', serif;
 }
 
-/* Item style */
+
 .item {
   border: 1px solid #ddd;
   border-radius: 8px;
   text-align: center;
-  background-color: white; /* Background color for items */
+  background-color: white; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
-  padding: 0; /* Remove padding to make the image cover the full box */
-  overflow: hidden; /* Ensures image doesn't overflow */
-  width: 100%; /* Make the width 100% of its container */
-  aspect-ratio: 4/5; /* Ensures the item box is square */
+  padding: 0; 
+  overflow: hidden; 
+  width: 100%; 
+  aspect-ratio: 4/5; 
   display: flex;
   flex-direction: column;
 }
 
-/* Image container style */
+
 .popular image-container {
   flex: 1;
   display: flex;
@@ -42,14 +42,13 @@
   overflow: hidden;
 }
 
-/* Style for the item image */
+
 .item-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* Title of the item */
 .item h2 {
   font-size: 22px; /* Font size for item title */
   margin: 16px 0; /* Margin around title */

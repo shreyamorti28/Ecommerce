@@ -1,11 +1,16 @@
-import React from 'react';
-import new_collection from '../Assets/new_collection';
+import React, { useEffect,useState } from 'react';
 import Item from '../Item/Item';
 import './New_Collection.css'; // Updated CSS import
 
 const NewCollection = () => {
-  // Duplicate items to create the continuous sliding effect
+  const [new_collection,setNew_collection]=useState([]);
+
   const items = [...new_collection, ...new_collection];
+  useEffect(()=>{
+    fetch('http://localhost:4000/newcollections')
+    .then((response)=>response.json())
+    .then((data)=>setNew_collection(data));
+  },[])
 
   return (
     <div className='new_collections'>
