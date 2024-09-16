@@ -102,3 +102,31 @@
     transform: translateX(-50%); /* Move left by half of the total width */
   }
 }
+/* Media Queries */
+@media (max-width: 1200px) {
+  .new_collection-item {
+    flex: 0 0 25%; /* Adjust to 4 items per row for tablets and larger mobile screens */
+  }
+}
+
+@media (max-width: 992px) {
+  .new_collection-item {
+    flex: 0 0 33.33%; /* Adjust to 3 items per row for medium-sized tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .new_collection-item {
+    flex: 0 0 50%; /* Adjust to 2 items per row for small tablets and large phones */
+  }
+}
+
+@media (max-width: 480px) {
+  .new_collection-item {
+    flex: 0 0 100%; /* Adjust to 1 item per row for small phones */
+  }
+
+  .new_collections h1 {
+    font-size: 2rem; /* Smaller font size for section title on small screens */
+  }
+}

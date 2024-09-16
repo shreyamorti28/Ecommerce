@@ -18,7 +18,7 @@ const CartItems = () => {
             </div>
             <hr />
             {all_products
-                .filter(e => cartItems[e.id] > 0) // Filter the products with quantity > 0
+                .filter(e => cartItems[e.id] > 0) 
                 .map((e) => (
                     <div key={e.id}>
                         <div className='cartitems-format cartitems-format-main'>

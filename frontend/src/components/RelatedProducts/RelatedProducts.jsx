@@ -1,12 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick'; // Import Slider component from react-slick
 import './RelatedProduct.css';
-import data_product from '../Assets/all_products';
 import Item from '../Item/Item';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const RelatedProducts = () => {
+  const [products, setProducts] = useState([]); // State to hold the products
+
+  // Fetch related products from the backend
+  useEffect(() => {
+    fetch('http://localhost:4000/relatedproducts')
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          setProducts(data.data); // Set the fetched products to the state
+        } else {
+          console.error("Failed to fetch related products");
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching related products:", error);
+      });
+  }, []); // Empty dependency array to run this effect only once on mount
+
   // Slider settings
   const settings = {
     infinite: true,  // Enables continuous looping
@@ -14,7 +31,7 @@ const RelatedProducts = () => {
     slidesToShow: 3, // Number of products to show at once
     slidesToScroll: 1, // Number of slides to scroll at a time
     autoplay: true, // Auto slide
-    autoplaySpeed: 1000, // Slide transition delay
+    autoplaySpeed: 500, // Slide transition delay
     arrows: false, // Disable navigation arrows
     dots: false, // Disable dots (you can enable if you prefer)
     responsive: [
@@ -39,16 +56,20 @@ const RelatedProducts = () => {
       <hr />
       <div className='relatedproducts-slider'>
         <Slider {...settings}>
-          {data_product.map((item) => (
-            <Item
-              key={item.id}
-              id={item.id}
-              name={item.name}
-              image={item.image}
-              new_price={item.new_price}
-              old_price={item.old_price}
-            />
-          ))}
+          {products.length > 0 ? (
+            products.map((item) => (
+              <Item
+                key={item.id}
+                id={item.id}
+                name={item.name}
+                image={item.image}
+                new_price={item.new_price}
+                old_price={item.old_price}
+              />
+            ))
+          ) : (
+            <p>Loading related products...</p>
+          )}
         </Slider>
       </div>
     </div>

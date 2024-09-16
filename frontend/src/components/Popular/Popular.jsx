@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Popular.css';
+import Item from '../Item/Item';
 
 const Popular = () => {
   const [popularProducts, setPopularProducts] = useState([]);
@@ -27,27 +28,17 @@ const Popular = () => {
       <h1>Summer Collection</h1>
       <hr />
       <div className="popular-item">
-        {popularProducts.length > 0 ? (
-          popularProducts.map((item) => (
-            <div key={item.id} className="item">
-              <div className="image-container">
-                <img
-                  src={`${item.image}?t=${new Date().getTime()}`}
-                  alt={item.name}
-                  className="item-image"
-                />
-              </div>
-              <h2>{item.name}</h2>
-              <p className="price">
-                <span className="new-price">${item.new_price}</span>
-                <span className="old-price">${item.old_price}</span>
-              </p>
-              <p className="description">{item.description}</p> {/* Always show the description */}
-            </div>
-          ))
-        ) : (
-          <p>No products available.</p> 
-        )}
+        {popularProducts.map((item, i) => (
+          <div className='new_collection-item' key={i}>
+            <Item 
+              id={item.id} 
+              name={item.name} 
+              image={item.image} 
+              new_price={item.new_price} 
+              old_price={item.old_price} 
+            />
+          </div>
+        ))}
       </div>
     </div>
   );

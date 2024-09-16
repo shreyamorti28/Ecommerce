@@ -31,3 +31,22 @@
     padding:48px;
     padding-bottom: 70px;
 }
+.descriptionbox-reviews{
+    display:flex;
+    flex-direction: column;
+    gap:25px;
+    border:1px solid #d0d0d0;
+    padding:48px;
+    padding-bottom: 70px;
+
+}
+.star {
+    font-size: 2rem;
+    cursor: pointer;
+    color: #ccc; /* Grey color for unselected stars */
+    transition: color 0.2s ease;
+  }
+  
+  .star.filled {
+    color: #ffd700; /* Yellow color for selected stars */
+  }

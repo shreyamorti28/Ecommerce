@@ -2,10 +2,16 @@
 .popular-item {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 items per row */
-  gap: 60px; /* Spacing between items */
+  gap: 30px; /* Spacing between items */
+  padding: 0 20px;
   margin: 0 auto;
-  width: 1600px; /* Container width */
+
+  
 }
+body {
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
 
 /* Heading style */
 .popular h1 {
@@ -126,8 +132,15 @@
 
 /* For screens with a max-width of 800px */
 @media (max-width: 800px) {
+  .item{
+    display: flex;
+    flex-direction: column;
+
+  }
   .popular-item {
-    max-width: 600px; /* Adjust max width */
+    display: flex;
+    flex-direction: column;
+    max-width: 400px; /* Adjust max width */
     gap: 20px; /* Adjust gap between items */
   }
 
@@ -143,8 +156,11 @@
 /* For screens with a max-width of 500px */
 @media (max-width: 500px) {
   .popular-item {
+    display: flex;
+    flex-direction: column;
     max-width: 100%; /* Full width */
     gap: 16px; /* Adjust gap between items */
+
   }
 
   .popular h1 {

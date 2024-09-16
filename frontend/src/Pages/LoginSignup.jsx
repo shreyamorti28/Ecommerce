@@ -28,7 +28,7 @@ const LoginSignup = () => {
       window.location.replace("/");
     }
     else{
-      alert("Response Error")
+      alert(responseData.errors)
     }
 
   }
@@ -48,7 +48,7 @@ const LoginSignup = () => {
       window.location.replace("/");
     }
     else{
-      alert("Response Error")
+      alert(responseData.errors)
     }
 
   }
