@@ -9,15 +9,6 @@ const ShopCategory = (props) => {
   return (
     <div className='shop-category'>
       <img class="banner" src={props.banner} alt={`${props.category} banner`} />
-      <div className="shopcategory-indexSort">
-        <p>
-          <span>Showing 1-12</span> out of 36 products
-        </p>
-        <div className='shopcategory-sort'>
-          Sort by<img src="" alt=""/>
-
-        </div>
-      </div>
       <div className='shopcategory-products'>
         {all_products.map((item,i)=>{
           if(props.category===item.category){

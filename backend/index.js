@@ -96,6 +96,19 @@ app.post('/signup',async(req,res)=>{
     const token=jwt.sign(data,'secret_ecom');
     res.json({success:true,token})
 })
+app.get('/relatedproducts', async (req, res) => {
+    try {
+        const relatedProducts = await Product.find({}); // Fetch all products
+        if (relatedProducts.length === 0) {
+            return res.status(404).json({ success: false, message: "No related products found" });
+        }
+
+        res.json({ success: true, data: relatedProducts });
+    } catch (error) {
+        res.status(500).json({ success: false, message: "Error fetching related products", error });
+    }
+});
+
 
 app.post('/login',async(req,res)=>{
     let user=await Users.findOne({email:req.body.email})
@@ -112,7 +125,7 @@ app.post('/login',async(req,res)=>{
 
         }
         else{
-            res.json({success:true,error:"Wrong Password"});
+            res.json({success:false,errors:"Wrong Password"});
         }
     }
     else{
@@ -156,21 +169,27 @@ const Product=mongoose.model("Product",{
 })
 app.get('/summer-collection', async (req, res) => {
     try {
-      const tshirt = await Product.findOne({ category: 'T-shirt' });
-      const pant = await Product.findOne({ category: 'Jeans' });
-      const shoe = await Product.findOne({ category: 'Shoes' });
-  
-      if (!tshirt || !pant || !shoe) {
-        return res.status(404).json({ success: false, message: "One or more categories are empty." });
-      }
-  
-      const summerCollection = [tshirt, pant, shoe]; // Change to array
-  
-      res.json({ success: true, data: summerCollection });
+        // Fetch one T-shirt
+        const tshirt = await Product.findOne({ category: 'T-shirt' }).sort({ date: -1 });
+        
+        // Fetch one pair of Jeans
+        const pant = await Product.findOne({ category: 'Jeans' }).sort({ date: -1 });
+        
+        // Fetch one pair of Shoes
+        const shoe = await Product.findOne({ category: 'Shoes' }).sort({ date: -1 });
+
+        if (!tshirt || !pant || !shoe) {
+            return res.status(404).json({ success: false, message: "One or more categories are empty." });
+        }
+
+        const summerCollection = [tshirt, pant, shoe]; // Return the collection as an array
+
+        res.json({ success: true, data: summerCollection });
     } catch (error) {
-      res.status(500).json({ success: false, message: "Error fetching summer collection", error });
+        res.status(500).json({ success: false, message: "Error fetching summer collection", error });
     }
-  });
+});
+
 const fetchUser=async(req,res,next)=>{
     const token=req.header('auth-token');
     if(!token){
@@ -187,6 +206,8 @@ const fetchUser=async(req,res,next)=>{
         }
     }
 }
+
+
 
 
 app.post('/addtocart',fetchUser, async (req, res) => {

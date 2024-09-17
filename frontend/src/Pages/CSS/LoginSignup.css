@@ -97,11 +97,32 @@
   cursor: pointer;
 }
 
-/* Responsive adjustments */
+@media (max-width: 768px) {
+  .loginsignup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    background-color: #fce4ec; /* Very light pink background color for the page */
+    margin-top: 150px; /* Increase the margin to add more space from the navbar */
+  }
+}
+
 @media (max-width: 500px) {
+  .loginsignup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    background-color: #fce4ec; /* Very light pink background color for the page */
+    margin-top: 150px; /* Increase the margin to add more space from the navbar */
+  }
+  
   .loginsignup-container {
     padding: 20px;
-    max-width: 90%;
+    width: 300px;
+    height: auto;
+
   }
 
   .loginsignup-container h1 {

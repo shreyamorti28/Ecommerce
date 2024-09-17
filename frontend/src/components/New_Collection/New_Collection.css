@@ -1,24 +1,22 @@
-/* Import fonts from Google Fonts or include them in your project */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
-
 .new_collections {
   padding: 40px 20px;
-  background: #fff; /* Light background for contrast */
-  text-align: center; /* Center align text */
+  background: #fff;
+  text-align: center;
 }
 
 .new_collections h1 {
-  font-size: 2.5rem; /* Larger font size for the section title */
-  color: #171717; /* Dark color to match hero section */
-  font-weight: 700; /* Bold font weight */
-  font-family: 'Playfair Display', serif; /* Elegant serif font */
-  margin-bottom: 20px; /* Space below the title */
+  font-size: 2.5rem;
+  color: #171717;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
 }
 
+/* Slider Styles for Large Screens */
 .slider {
-  overflow: hidden; /* Hide overflow for sliding effect */
-  position: relative; /* Relative positioning for child absolute positioning */
-  width: 100%; /* Full width of container */
+  overflow: hidden;
+  position: relative;
+  width: 100%;
 }
 
 .slider-wrapper {
@@ -28,105 +26,103 @@
 
 .slider-content {
   display: flex;
-  width: 200%; /* Double the width to include duplicated items */
-  animation: slide 30s linear infinite; /* Continuous sliding animation */
+  width: 200%; /* Make the width 200% to show the sliding effect */
+  animation: slide 30s linear infinite;
 }
 
 .new_collection-item {
-  flex: 0 0 20%; /* Adjust the item width as needed */
+  flex: 0 0 20%; /* Adjust the width as needed */
+  margin: 10px;
   box-sizing: border-box;
-  background: #fff; /* White background for items */
-  border: 1px solid #ddd; /* Light border */
-  border-radius: 10px; /* Rounded corners */
-  overflow: hidden; /* Hide overflow to ensure images fit nicely */
-  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
-  position: relative; /* For positioning details over image */
-}
-
-.new_collection-item:hover {
-  transform: scale(1.05); /* Slight zoom effect */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .new_collection-item img {
-  width: 100%; /* Make sure the image takes up the full width of the container */
-  height: 100%; /* Make sure the image takes up the full height of the container */
-  object-fit: cover; /* Crop and cover the container while maintaining aspect ratio */
-  display: block; /* Remove extra space below image */
-}
-
-.new_collection-item .details {
-  padding: 15px;
-  font-family: 'Roboto', sans-serif; /* Modern sans-serif font for details */
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.9); /* Semi-transparent background for readability */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
-  border-top: 1px solid #ddd; /* Light border on top of details */
-  text-align: left; /* Align text to the left */
-  transform: translateY(100%); /* Start hidden below the item */
-  transition: transform 0.4s ease; /* Smooth sliding transition */
+  height: auto;
+  object-fit: cover;
 }
 
-.new_collection-item:hover .details {
-  transform: translateY(0); /* Slide up into view on hover */
-}
-
-.new_collection-item .details h3 {
-  font-size: 1.5rem; /* Larger font size for item names */
-  color: #333; /* Darker text color */
-  margin: 0 0 10px; /* Margin below the item name */
-}
-
-.new_collection-item .details .price {
-  font-size: 1.2rem;
-  color: #e94e77; /* Bright color for new price */
-  font-weight: bold;
-}
-
-.new_collection-item .details .old-price { 
-  font-size: 1rem;
-  color: #a0a0a0; /* Grey color for old price */
-  text-decoration: line-through;
-  margin-left: 10px;
-}
-
-/* Keyframes for sliding animation */
+/* Keyframes for the sliding effect */
 @keyframes slide {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%); /* Move left by half of the total width */
+    transform: translateX(-50%); /* Slide half the width */
   }
 }
-/* Media Queries */
+
+/* Static Grid for Smaller Screens */
 @media (max-width: 1200px) {
-  .new_collection-item {
-    flex: 0 0 25%; /* Adjust to 4 items per row for tablets and larger mobile screens */
+
+  .slider {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+  
+  .slider-wrapper {
+    display: flex;
+    width: 100%;
+  }
+  
+  .slider-content {
+    display: flex;
+    width: 200%; /* Make the width 200% to show the sliding effect */
+    animation: slide 30s linear infinite;
   }
 }
 
 @media (max-width: 992px) {
+
+  .slider {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+  
+  .slider-wrapper {
+    display: flex;
+    width: 100%;
+  }
+  
+  .slider-content {
+    display: flex;
+    width: 200%; /* Make the width 200% to show the sliding effect */
+    animation: slide 30s linear infinite;
+  }
+
   .new_collection-item {
-    flex: 0 0 33.33%; /* Adjust to 3 items per row for medium-sized tablets */
+    flex: 0 0 25%; /* Adjust for smaller screens */
+    margin-bottom: 10px; /* Add margin for spacing */
   }
 }
 
 @media (max-width: 768px) {
+
   .new_collection-item {
-    flex: 0 0 50%; /* Adjust to 2 items per row for small tablets and large phones */
+    flex: 0 0 50%; /* Show 2 items per row */
   }
 }
 
 @media (max-width: 480px) {
-  .new_collection-item {
-    flex: 0 0 100%; /* Adjust to 1 item per row for small phones */
+  .new_collection-item{
+    width:400px;
+    height:auto;
+  }
+  .slider-wrapper {
+    flex-wrap: wrap; /* Switch to wrap for smaller screens */
+    animation: none; /* Disable the sliding animation */
   }
 
-  .new_collections h1 {
-    font-size: 2rem; /* Smaller font size for section title on small screens */
+  .slider-content {
+    flex-wrap: wrap;
+    justify-content: center; /* Center the items in the grid */
+    width: 100%; /* Set width back to 100% */
+    animation: none; /* Disable the sliding animation */
   }
 }

@@ -5,9 +5,7 @@ import cart from '../Assets/cart.png';
 import { Link } from 'react-router-dom';
 import { ShopContext } from '../../context/ShopContext';
 import nav_dropdown from '../Assets/dropdown.png';
-import tshirtImg from '../Assets/White_tshirt.jpg'; // Example image for T-shirt
-import jeansImg from '../Assets/baggy_jeans2.png';  // Example image for Jeans
-import shoesImg from '../Assets/Trek_shoes.png';  // Example image for Shoes
+
 
 const Navbar = () => {
     const [menu, setMenu] = useState("Home");
@@ -15,9 +13,15 @@ const Navbar = () => {
     const menuref = useRef();
 
     const dropdown_toggle = (e) => {
-        menuref.current.classList.toggle('nav-menu-visible');
-        e.target.classList.toggle('open');
+    // Toggle the class on the menu element
+    if (menuref.current.classList.contains('nav-menu-visible')) {
+        menuref.current.classList.remove('nav-menu-visible');
+        e.target.classList.remove('open');
+    } else {
+        menuref.current.classList.add('nav-menu-visible');
+        e.target.classList.add('open');
     }
+};
 
     return (
         <div className='navbar'>
@@ -34,26 +38,17 @@ const Navbar = () => {
                     <li onClick={() => { setMenu("T-shirt") }}>
                         <Link to='/T-shirt'>T-shirt</Link>
                         {menu === "T-shirt" ? <hr /> : null}
-                        <div className="dropdown-content">
-                            <img src={tshirtImg} alt="T-shirt" />
-                            <p>Discover our collection of stylish T-shirts.</p>
-                        </div>
+                        
                     </li>
                     <li onClick={() => { setMenu("Jeans") }}>
                         <Link to='/Jeans'>Jeans</Link>
                         {menu === "Jeans" ? <hr /> : null}
-                        <div className="dropdown-content">
-                            <img src={jeansImg} alt="Jeans" />
-                            <p>Find your perfect fit with our range of jeans.</p>
-                        </div>
+                        
                     </li>
                     <li onClick={() => { setMenu("Shoes") }}>
                         <Link to='/Shoes'>Shoes</Link>
                         {menu === "Shoes" ? <hr /> : null}
-                        <div className="dropdown-content">
-                            <img src={shoesImg} alt="Shoes" />
-                            <p>Step up your style with our selection of shoes.</p>
-                        </div>
+                        
                     </li>
                 </ul>
             </div>
