@@ -3,6 +3,7 @@
   width: 100%;
   background-color: #f5f5f5;
   margin-top: 200px;
+  padding: 0 20px; /* Add padding on left and right */
 }
 
 /* Banner image at the top */
@@ -56,14 +57,14 @@
 .shopcategory-products {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Two items per row */
-  gap:20px;
-  padding: 0 20px;
-
+  gap: 20px; /* Space between items */
+  padding: 0 40px; /* Padding within the container */
 }
 
 /* Individual product items */
 .shopcategory-products .item {
-  width: 700px; /* Fixed width for all items */
+  width: 100%; /* Adjust width to fit within the container */
+  max-width: 700px; /* Maximum width for items */
   height: 800px; /* Fixed height for all items */
   background: #fff; /* White background for items */
   border: 1px solid #ddd; /* Light border */
@@ -86,10 +87,10 @@
 
 /* Product image */
 .shopcategory-products .item img {
-  padding:20px;
-  margin-top:1px;
-  width: 500px; /* Fixed width for all images */
-  height: 700px; /* Fixed height for all images */
+  padding: 20px;
+  margin-top: 1px;
+  width: 100%; /* Adjust width to fit within the item */
+  height: auto; /* Maintain aspect ratio */
   object-fit: cover; /* Ensure the image covers the entire box */
   display: block; /* Ensures no extra space below the image */
 }
@@ -119,138 +120,93 @@
 .shopcategory-products .item .price .old-price {
   text-decoration: line-through;
 }
-@media (max-width: 1500px){
-  .shop-category{
-    justify-content: center;
 
+/* Responsive Design for screens <= 1500px */
+@media (max-width: 1500px) {
+  .shop-category {
+    padding: 0 10px; /* Adjust padding for smaller screens */
   }
   .shopcategory-indexSort {
     flex-direction: column;
     align-items: flex-start;
   }
-
   .shopcategory-products {
-    justify-content: center;
-    grid-template-columns: repeat(2, 1fr); 
-    /* One item per row on small screens */
+    grid-template-columns: repeat(2, 1fr); /* Two items per row */
   }
-
   .shopcategory-products .item {
-    width: 700px; /* Fixed width for all items */
-    height: 700px; /* Fixed height for all items */
-    background: #fff; /* White background for items */
-    border: 1px solid #ddd; /* Light border */
-    border-radius: 10px; /* Rounded corners */
-    overflow: hidden; /* Hide overflow to ensure images fit nicely */
-    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
-    position: relative; /* For positioning details over image */
-    display: flex;
-    flex-direction: column; /* Stack content vertically */
-    align-items: center; /* Center content horizontally */
-    padding: 0; /* Remove any default padding */
-    justify-content: space-between; 
-    
-
-  }
-
-  .shopcategory-products .item img {
-    height: 700px; 
-    object-fit: cover;
-    display: block;
+    max-width: 100%; /* Adjust width to fit within the container */
   }
 }
-@media (max-width: 1300px){
-  .shop-category{
-    justify-content: center;
 
+/* Responsive Design for screens <= 1300px */
+@media (max-width: 1300px) {
+  .shop-category {
+    padding: 0 10px; /* Adjust padding for smaller screens */
   }
   .shopcategory-indexSort {
     flex-direction: column;
     align-items: flex-start;
   }
-
   .shopcategory-products {
-    justify-content: center;
-    grid-template-columns: repeat(2, 1fr); /* One item per row on small screens */
-
+    grid-template-columns: repeat(2, 1fr); /* Two items per row */
   }
-
   .shopcategory-products .item {
-    width:400px;
-    height:500px;
+    width: 400px;
+    height: 500px;
     margin: 0 auto;
-    padding:20px;
-    
-
+    padding: 20px;
   }
-
   .shopcategory-products .item img {
-    padding:20px;
-    margin:0 auto;
-    width: 400px; /* Fixed width for all images */
-    height: 700px; /* Fixed height for all images */
-    object-fit: cover; /* Ensure the image covers the entire box */
-    display: block; /* Ensures no extra space below the image */
-
-
-}
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .banner{
-    display: none;
-  }
-  .shop-category{
-    justify-content: center;
-    margin-top: 300px;
-
-  }
-  .shopcategory-indexSort {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .shopcategory-products {
-    justify-content: center;
-    grid-template-columns: repeat(1, 1fr); /* One item per row on small screens */
-  }
-
-  .shopcategory-products .item {
-    width: 400px; /* Adjust width to fit smaller screens */
-    height: 500px; /* Maintain aspect ratio */
-    padding:40px;
-  }
-
-  .shopcategory-products .item img {
-    width: 100%;
-    margin: 0 auto;
+    width: 100%; /* Adjust width for smaller screens */
     height: auto; /* Maintain aspect ratio */
   }
 }
 
-@media (max-width: 480px) {
-  .shop-category{
-    justify-content: center;
-
+/* Responsive Design for screens <= 768px */
+@media (max-width: 768px) {
+  .banner {
+    display: none; /* Hide banner on smaller screens */
+  }
+  .shop-category {
+    padding: 0 10px; /* Adjust padding for smaller screens */
+    margin-top: 300px;
   }
   .shopcategory-indexSort {
     flex-direction: column;
     align-items: flex-start;
   }
-
   .shopcategory-products {
-    justify-content: center;
-    grid-template-columns: repeat(1, 1fr); /* One item per row on small screens */
+    grid-template-columns: repeat(1, 1fr); /* One item per row */
   }
-
   .shopcategory-products .item {
-    padding:10px;
-    width: 300px; /* Adjust width to fit smaller screens */
+    width: 400px; /* Adjust width for smaller screens */
+    height: 500px; /* Maintain aspect ratio */
+    padding: 40px;
+  }
+  .shopcategory-products .item img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+  }
+}
+
+/* Responsive Design for screens <= 480px */
+@media (max-width: 480px) {
+  .shop-category {
+    padding: 0 5px; /* Adjust padding for very small screens */
+  }
+  .shopcategory-indexSort {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .shopcategory-products {
+    grid-template-columns: repeat(1, 1fr); /* One item per row */
+  }
+  .shopcategory-products .item {
+    width: 300px; /* Adjust width for very small screens */
     height: 400px; /* Maintain aspect ratio */
+    padding: 10px;
     margin: 0 auto;
   }
-
   .shopcategory-products .item img {
     width: 100%;
     height: auto; /* Maintain aspect ratio */
