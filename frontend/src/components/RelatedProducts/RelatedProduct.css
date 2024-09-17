@@ -1,5 +1,6 @@
 .relatedproducts {
-  display: none;
+  padding: 20px;
+  text-align: center;
   
 }
 .relatedproducts h1{
@@ -12,8 +13,4 @@
   margin-top: 20px;
 }
 
-.relatedproducts-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+

@@ -176,9 +176,10 @@
   }
 
   .shopcategory-products .item {
-    width:500px;
+    width:400px;
     height:500px;
     margin: 0 auto;
+    padding:20px;
     
 
   }
@@ -216,13 +217,14 @@
   }
 
   .shopcategory-products .item {
-    width: 100%; /* Adjust width to fit smaller screens */
-    height: auto; /* Maintain aspect ratio */
-    margin: 0 auto; /* Center item */
+    width: 400px; /* Adjust width to fit smaller screens */
+    height: 500px; /* Maintain aspect ratio */
+    padding:40px;
   }
 
   .shopcategory-products .item img {
     width: 100%;
+    margin: 0 auto;
     height: auto; /* Maintain aspect ratio */
   }
 }
@@ -243,8 +245,9 @@
   }
 
   .shopcategory-products .item {
-    width: 100%; /* Adjust width to fit smaller screens */
-    height: auto; /* Maintain aspect ratio */
+    padding:10px;
+    width: 300px; /* Adjust width to fit smaller screens */
+    height: 400px; /* Maintain aspect ratio */
     margin: 0 auto;
   }
 

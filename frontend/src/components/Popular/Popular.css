@@ -2,16 +2,15 @@
 .popular-item {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 items per row */
-  gap: 30px; /* Spacing between items */
-  padding: 0 20px;
+  gap: 10px; /* Spacing between items */
+  padding: 0 90px;
   margin: 0 auto;
-
-  
+  padding-bottom: 100px; /* Add padding to avoid collision with the footer */
 }
+
 body {
   overflow-x: hidden; /* Prevent horizontal overflow */
 }
-
 
 /* Heading style */
 .popular h1 {
@@ -20,10 +19,10 @@ body {
   font-size: 2.5rem; 
   font-weight: 600;
   text-align: center;
-  font-family:'Playfair Display', serif;
+  font-family: 'Playfair Display', serif;
 }
 
-
+/* Item styles */
 .item {
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -31,16 +30,18 @@ body {
   background-color: white; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
-  padding: 0; 
   overflow: hidden; 
-  width: 100%; 
-  aspect-ratio: 4/5; 
+  width: 400px;
+  height: 500px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Ensure content is spaced properly */
+  padding: 0; 
 }
 
-
-.popular image-container {
+/* Image container */
+.popular .image-container {
   flex: 1;
   display: flex;
   align-items: center;
@@ -48,22 +49,24 @@ body {
   overflow: hidden;
 }
 
-
 .item-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
+/* Item title */
 .item h2 {
-  font-size: 22px; /* Font size for item title */
+  font-size: 22px; /* Ensure clear font size for the item title */
   margin: 16px 0; /* Margin around title */
   color: #333;
+  min-height: 40px; /* Ensure enough space for longer titles */
 }
 
 /* Pricing section */
 .price {
-  font-size: 20px; /* Font size for prices */
+  font-size: 20px; /* Clear font size for prices */
   font-weight: bold;
   margin: 12px 0; /* Margin around pricing */
 }
@@ -93,8 +96,10 @@ body {
 /* Responsive adjustments */
 @media (max-width: 1280px) {
   .popular-item {
+    display: flex;
+    flex-direction: column;
     max-width: 1000px; /* Adjust max width */
-    gap: 50px; /* Adjust gap between items */
+    padding-bottom: 80px; /* Adjust bottom padding */
   }
 
   .popular h1 {
@@ -103,6 +108,7 @@ body {
 
   .item h2 {
     font-size: 20px; /* Adjust item title size */
+    min-height: 40px; /* Ensure enough space for item titles */
   }
 
   .price {
@@ -113,8 +119,8 @@ body {
 /* For screens with a max-width of 1024px */
 @media (max-width: 1024px) {
   .popular-item {
-    max-width: 800px; /* Adjust max width */
-    gap: 40px; /* Adjust gap between items */
+    display: flex;
+    flex-direction: column;
   }
 
   .popular h1 {
@@ -122,26 +128,23 @@ body {
   }
 
   .item h2 {
-    font-size: 20px; /* Adjust item title size */
+    font-size: 18px; /* Adjust item title size */
+    min-height: 40px; /* Ensure enough space for item titles */
   }
 
   .price {
-    font-size: 18px; /* Adjust price size */
+    font-size: 16px; /* Adjust price size */
   }
 }
 
 /* For screens with a max-width of 800px */
 @media (max-width: 800px) {
-  .item{
-    display: flex;
-    flex-direction: column;
-
-  }
   .popular-item {
     display: flex;
     flex-direction: column;
     max-width: 400px; /* Adjust max width */
     gap: 20px; /* Adjust gap between items */
+    padding-bottom: 50px; /* Adjust bottom padding */
   }
 
   .popular h1 {
@@ -149,7 +152,8 @@ body {
   }
 
   .item h2 {
-    font-size: 18px; /* Adjust item title size */
+    font-size: 16px; /* Adjust item title size */
+    min-height: 40px; /* Ensure enough space for item titles */
   }
 }
 
@@ -160,7 +164,7 @@ body {
     flex-direction: column;
     max-width: 100%; /* Full width */
     gap: 16px; /* Adjust gap between items */
-
+    padding-bottom: 40px; /* Adjust bottom padding */
   }
 
   .popular h1 {
@@ -168,6 +172,11 @@ body {
   }
 
   .item h2 {
-    font-size: 16px; /* Adjust item title size */
+    font-size: 14px; /* Adjust item title size */
+    min-height: 40px; /* Ensure enough space for item titles */
+  }
+
+  .price {
+    font-size: 12px; /* Adjust price size */
   }
 }

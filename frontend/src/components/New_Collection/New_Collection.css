@@ -110,9 +110,9 @@
 }
 
 @media (max-width: 480px) {
-  .new_collection-item{
-    width:400px;
+  .new_collections item{
     height:auto;
+    
   }
   .slider-wrapper {
     flex-wrap: wrap; /* Switch to wrap for smaller screens */
@@ -120,9 +120,10 @@
   }
 
   .slider-content {
-    flex-wrap: wrap;
+    grid-template-columns: repeat(2, 1fr); 
+
     justify-content: center; /* Center the items in the grid */
     width: 100%; /* Set width back to 100% */
-    animation: none; /* Disable the sliding animation */
+    animation: slide 10s linear infinite;
   }
 }
