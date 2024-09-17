@@ -63,7 +63,7 @@
 
 /* Individual product items */
 .shopcategory-products .item {
-  width: 800px; /* Fixed width for all items */
+  width: 700px; /* Fixed width for all items */
   height: 800px; /* Fixed height for all items */
   background: #fff; /* White background for items */
   border: 1px solid #ddd; /* Light border */
