@@ -70,7 +70,7 @@
 .shopcategory-products .item {
   width: 100%; /* Adjust width to fit within the container */
   max-width: 700px; /* Maximum width for items */
-  height: 800px; /* Fixed height for all items */
+  height: 100%; /* Fixed height for all items */
   background: #fff; /* White background for items */
   border: 1px solid #ddd; /* Light border */
   border-radius: 10px; /* Rounded corners */
@@ -82,6 +82,7 @@
   align-items: center; /* Center content horizontally */
   padding: 0; /* Remove any default padding */
   justify-content: space-between; /* Ensure content is evenly spaced */
+  transition: transform 0.3s ease-in-out;
 }
 
 /* Hover effect for product items */
@@ -93,10 +94,10 @@
 /* Product image */
 .shopcategory-products .item img {
   padding: 20px;
-  margin-top: 1px;
-  width: 100%; /* Adjust width to fit within the item */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Ensure the image covers the entire box */
+  width: 100%; /* Full width of the item container */
+  height: 600px; /* Fixed height for all images */
+  object-fit: cover; /* Ensure the image covers the box, maintaining aspect ratio */
+  object-position: center; /* Center the image */
   display: block; /* Ensures no extra space below the image */
 }
 
@@ -163,7 +164,7 @@
   }
   .shopcategory-products .item img {
     width: 100%; /* Adjust width for smaller screens */
-    height: auto; /* Maintain aspect ratio */
+    height: 200px; /* Fixed height for consistency */
   }
 }
 
@@ -190,7 +191,7 @@
   }
   .shopcategory-products .item img {
     width: 100%;
-    height: auto; /* Maintain aspect ratio */
+    height: 200px; /* Fixed height for consistency */
   }
 }
 
@@ -214,6 +215,6 @@
   }
   .shopcategory-products .item img {
     width: 100%;
-    height: auto; /* Maintain aspect ratio */
+    height: 200px; /* Fixed height for consistency */
   }
 }

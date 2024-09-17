@@ -62,21 +62,19 @@
     width: 20px;
     height: 20px;
 }
+
 @media(max-width:780px){
     .hero-content{
         padding:5px;
         margin-top:200px;
         
     }
-
-
 }
+
 @media(max-width:480px){
     .hero-content{
         padding:5px;
         margin-top:200px;
         
     }
-
-
 }
