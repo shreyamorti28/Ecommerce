@@ -1,8 +1,13 @@
+/* Apply box-sizing globally */
+* {
+  box-sizing: border-box;
+}
+
 /* Container for the entire shop category */
 .shop-category {
-  width: 100%;
+  width: calc(100% - 40px); /* Adjust width to account for padding */
   background-color: #f5f5f5;
-  margin-top: 200px;
+  margin: 200px auto 0; /* Center the container */
   padding: 0 20px; /* Add padding on left and right */
 }
 
@@ -58,7 +63,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Two items per row */
   gap: 20px; /* Space between items */
-  padding: 0 40px; /* Padding within the container */
+  padding: 0; /* No padding needed here */
 }
 
 /* Individual product items */
