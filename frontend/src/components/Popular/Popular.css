@@ -100,6 +100,7 @@ body {
     flex-direction: column;
     max-width: 1000px; /* Adjust max width */
     padding-bottom: 80px; /* Adjust bottom padding */
+    width: fit-content;
   }
 
   .popular h1 {
@@ -142,9 +143,7 @@ body {
   .popular-item {
     display: flex;
     flex-direction: column;
-    max-width: 400px; /* Adjust max width */
-    gap: 20px; /* Adjust gap between items */
-    padding-bottom: 50px; /* Adjust bottom padding */
+
   }
 
   .popular h1 {
@@ -162,9 +161,9 @@ body {
   .popular-item {
     display: flex;
     flex-direction: column;
-    max-width: 100%; /* Full width */
-    gap: 16px; /* Adjust gap between items */
+    
     padding-bottom: 40px; /* Adjust bottom padding */
+    padding: 10px;
   }
 
   .popular h1 {

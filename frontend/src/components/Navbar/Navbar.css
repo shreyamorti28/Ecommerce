@@ -1,3 +1,5 @@
+
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -5,9 +7,11 @@
     box-shadow: 0 1px 3px -2px black;
     background-color: white;
     position: absolute;
-    top: 10px;
+    top:100px;
+    left: 50%; /* Add this */
+    transform: translate(-50%, -50%); /* Add this */
     width: calc(100% - 100px); 
-    margin: 35px;
+    margin: 0 auto; 
 }
 
 .nav-logo {
@@ -45,6 +49,7 @@
     background-color:#ffe4e1;
     color:black;
 }
+
 
 .nav-cart-count {
     width: 22px;
@@ -94,26 +99,12 @@
 }
 
 
-@media (max-width: 1024px) {
-    .navbar {
-        margin: 40px;
-        width: calc(100% - 100px);  /* Adjust width for smaller margins */
-    }
 
-    .nav-menu {
-        gap: 30px;
-    }
-
-    .nav-cart-login {
-        gap: 5px;
-    }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 882px) {
     .navbar {
         flex-direction: column;
         align-items: flex-start;
-        padding: 10px;
+        top:20%;
     }
 
     .nav-dropdown {
@@ -162,7 +153,7 @@
 
 @media (max-width: 528px) {
     .navbar {
-        margin: -10px;
+        top:20px;
         display: flex;
         flex-direction: row;
         position: fixed; /* Fixed positioning */
@@ -170,16 +161,15 @@
         background-color: white;
         box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1); /* Shadow for separation */ /* Space items between the sides */
         z-index: 1000; /* Ensure it is on top */
-        height: 50px; /* Fixed height for compact look */
+        height: 60px; /* Fixed height for compact look */
     }
 
     .nav-logo {
         display: none; /* Hide the logo */
     }
 
-    .nav-menu {/* Reset margin */
+    .nav-menu {
         top:50px;
-        padding: -50px; 
         display:flex;
         width:100%;
         flex-direction: row;
