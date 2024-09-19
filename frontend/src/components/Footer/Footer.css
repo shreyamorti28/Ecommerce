@@ -11,7 +11,7 @@
   
   /* Footer logo styling */
   .footer_logo img {
-    max-width: 120px; /* Adjust as needed */
+    max-width: 300px; /* Adjust as needed */
     height: auto;
     margin-bottom: 20px; /* Space below the logo */
   }
@@ -46,10 +46,10 @@
   }
   
   .footer-icons-container img {
-    width: 28px; /* Adjust icon size as needed */
-    height: 28px; /* Consistent size */
+    width: 50px; /* Adjust icon size as needed */
+    height: 50px; /* Consistent size */
     border-radius: 50%; /* Circular icons */
-    padding: 8px; /* Space inside the circle */
+    padding: 15px; /* Space inside the circle */
     background-color: #f5c6cb; /* Light pink background for icons */
     transition: transform 0.3s ease, background-color 0.3s ease;
   }
