@@ -13,7 +13,7 @@ import jeans_banner from './components/Assets/jeans_banner.jpg';
 
 
 function App() {  
-  fetch('https://backend-project-name.vercel.app/api/your-endpoint')
+  fetch('https://ecommerce-1taacvtqr-shreyamorti28s-projects.vercel.app')
     .then(response => response.json())
     .then(data => console.log(data))
     .catch(error => console.error('Error:', error));
