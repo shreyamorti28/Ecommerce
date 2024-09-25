@@ -211,6 +211,28 @@ app.post('/getcart',fetchUser,async(req,res)=>{
     let userData=await Users.findOne({_id:req.user.id});
     res.json(userData.cartData);
 })
+
+app.get('/relatedproduct/:id', async (req, res) => {
+    try {
+        // Get the current product by ID
+        const currentProduct = await Product.findOne({ id: req.params.id });
+
+        if (!currentProduct) {
+            return res.status(404).json({ success: false, message: "Product not found." });
+        }
+
+        // Find related products by category, excluding the current product
+        const relatedProducts = await Product.find({
+            category: currentProduct.category,
+            id: { $ne: currentProduct.id } // Exclude the current product
+        }).limit(5); // Limit to 5 related products or change as needed
+
+        res.json({ success: true, relatedProducts });
+    } catch (error) {
+        res.status(500).json({ success: false, message: "Error fetching related products", error });
+    }
+});
+
   
   
 
