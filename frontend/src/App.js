@@ -15,7 +15,7 @@ import { useEffect } from 'react';
 function App() {
   useEffect(() => {
     // Fetch data when component mounts
-    fetch('https://ecommerce-1taacvtqr-shreyamorti28s-projects.vercel.app')
+    fetch('https://ecommerce-igcpp5nng-shreyamorti28s-projects.vercel.app')
       .then(response => response.json())
       .then(data => console.log(data))
       .catch(error => console.error('Error:', error));
