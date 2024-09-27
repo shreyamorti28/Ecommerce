@@ -10,9 +10,6 @@ const fs = require("fs");
 
 app.use(express.json());
 app.use(cors());
-app.use(cors({
-    origin: 'https://ecommerce-25hx.vercel.app/'  // Replace with your frontend domain
-}));
 
 // MongoDB connection with error handling
 mongoose.connect("mongodb+srv://devloper:iamdev@cluster0.oer9m.mongodb.net/Ecommerce")
