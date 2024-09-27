@@ -23,6 +23,7 @@ Welcome to my eCommerce website project! This application is built using the **M
 ### Admin Panel
 - **Add Products**: Admins can easily add new products to the inventory.
 - **View Products**: Admins can view and manage all existing products.
+
 ## Technologies Used 🛠️
 
 - **MongoDB**: NoSQL database for storing product and user data.
@@ -30,4 +31,7 @@ Welcome to my eCommerce website project! This application is built using the **M
 - **React**: Frontend library for building interactive user interfaces.
 - **Node.js**: JavaScript runtime for server-side logic.
 - **CSS3**: For styling and responsive design.
+
+## Product Showcase
+
 ![Product Showcase](./Ecommerce.gif)
