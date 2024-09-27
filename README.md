@@ -1,6 +1,6 @@
 # 🛒 eCommerce Website
 
-Welcome to my eCommerce website project! This application is built using the **MERN stack** (MongoDB, Express.js, React, Node.js) and provides a responsive and visually appealing shopping experience.
+Welcome to my eCommerce website project! This application is built using the **MERN stack** (MongoDB, Express.js, React, Node.js) and provides a responsive and visually appealing shopping experience. It also utilizes a RESTful API to handle interactions between the frontend and backend.
 
 ## Features ✨
 
@@ -24,6 +24,12 @@ Welcome to my eCommerce website project! This application is built using the **M
 - **Add Products**: Admins can easily add new products to the inventory.
 - **View Products**: Admins can view and manage all existing products.
 
+## Backend 🌐
+- **RESTful API**: Manages CRUD operations for products and user data, ensuring smooth communication between the frontend and backend.
+- **Express.js**: Handles routing, middleware, and server-side logic for API requests.
+- **Node.js**: Provides the runtime environment for executing backend JavaScript code.
+- **MongoDB**: Stores all data related to products, users, and orders.
+
 ## Technologies Used 🛠️
 
 - **MongoDB**: NoSQL database for storing product and user data.
@@ -31,8 +37,9 @@ Welcome to my eCommerce website project! This application is built using the **M
 - **React**: Frontend library for building interactive user interfaces.
 - **Node.js**: JavaScript runtime for server-side logic.
 - **CSS3**: For styling and responsive design.
+- **REST API**: Facilitates communication between the frontend and backend, handling CRUD operations for products and user data.
 
 ## Product Showcase
 
 ![Product Showcase](./Ecommerce.gif)
-![Product Showcase](./Ecommerce_small_screen.gif)
+![Product Showcase - Small Screen](./Ecommerce_small_screen.gif)
