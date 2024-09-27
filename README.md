@@ -35,3 +35,4 @@ Welcome to my eCommerce website project! This application is built using the **M
 ## Product Showcase
 
 ![Product Showcase](./Ecommerce.gif)
+![Product Showcase](./Ecommerce_small_screen.gif)
