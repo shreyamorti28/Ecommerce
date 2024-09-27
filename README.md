@@ -30,4 +30,4 @@ Welcome to my eCommerce website project! This application is built using the **M
 - **React**: Frontend library for building interactive user interfaces.
 - **Node.js**: JavaScript runtime for server-side logic.
 - **CSS3**: For styling and responsive design.
-![Product Showcase](Ecommerce.gif)
+![Product Showcase](./Ecommerce.gif)
