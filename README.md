@@ -39,7 +39,7 @@ Welcome to my eCommerce website project! This application is built using the **M
 - **CSS3**: For styling and responsive design.
 - **REST API**: Facilitates communication between the frontend and backend, handling CRUD operations for products and user data.
 
-## Product Showcase
+## Project Showcase
 
 ![Product Showcase](./Ecommerce.gif)
 
