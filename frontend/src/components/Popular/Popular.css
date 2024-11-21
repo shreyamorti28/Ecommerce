@@ -1,5 +1,9 @@
 /* Container for the items */
-
+.popular{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .popular-item {
   display: grid;
@@ -108,10 +112,6 @@ body {
 @media (max-width: 1280px) {
   .popular-item {
     display: flex;
-    flex-direction: column;
-    max-width: 1000px; /* Adjust max width */
-    padding-bottom: 80px; /* Adjust bottom padding */
-    width: fit-content;
   }
 
   .popular h1 {
@@ -125,6 +125,9 @@ body {
 
   .price {
     font-size: 18px; /* Adjust price size */
+  }
+  .new_collection-item{
+    width:300px;
   }
 }
 

@@ -75,8 +75,14 @@
         
     }
     .hero-content h2 {
-        font-size: 40px;
+        font-size: 30px;
 
+    }
+    .hero-content p{
+        font-size:20px;
+    }
+    .hero-button{
+        font-size: 15px;
     }
 
 }

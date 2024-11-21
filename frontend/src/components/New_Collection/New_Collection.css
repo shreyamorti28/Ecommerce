@@ -1,8 +1,4 @@
-.new_collections {
-  padding: 40px 20px;
-  background: #fff;
-  text-align: center;
-}
+
 
 .new_collections h1 {
   font-size: 2.5rem;
@@ -14,12 +10,12 @@
 
 /* Slider Styles for Large Screens */
 .slider {
-  overflow: hidden;
-  position: relative;
+  
   width: 100%;
   display: flex; /* Add display: flex to center the items */
-  flex-wrap: wrap; /* Add flex-wrap to wrap items to the next line */
+  
   justify-content: center; /* Add justify-content to center the items */
+  white-space: nowrap; 
 }
 
 .slider-wrapper {
@@ -49,50 +45,33 @@
   object-fit: cover;
 }
 
-/* Add the sliding animation back */
-.slider-content {
-  animation: slide 30s linear infinite;
+
+
+.new_collections {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden; /* Hide overflowing items */
+  position: relative;
+  width: 100%;
+  align-items: center;
 }
 
-/* Keyframes for the sliding effect */
+.slider-wrapper {
+  display: flex;
+  animation: slide 10s linear infinite; /* Duration adjusted dynamically */
+  will-change: transform;
+}
+
 @keyframes slide {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%); /* Slide half the width */
+    transform: translateX(-100%); /* Adjust to slide all items */
   }
 }
 
-/* Media Queries for smaller screens */
-@media (max-width: 1200px) {
-  .new_collection-item {
-    flex: 0 0 calc(25% - 20px); /* Adjust the width for smaller screens */
-  }
-}
-
-@media (max-width: 992px) {
-  .new_collection-item {
-    flex: 0 0 calc(33.33% - 20px); /* Adjust the width for smaller screens */
-  }
-}
-
-@media (max-width: 768px) {
-  .new_collection-item {
-    flex: 0 0 calc(50% - 20px); /* Show 2 items per row */
-  }
-}
-
-@media (max-width: 480px) {
-  .new_collection-item {
-    
-    display: flex;
-    flex-direction: column;
-  }
-  .slider-content {
-    animation: none;
-  }
-  
-  
-  
+.new_collection-item {
+  width:400px;
 }
