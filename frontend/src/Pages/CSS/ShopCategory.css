@@ -1,0 +1,208 @@
+/* Apply box-sizing globally */
+* {
+  box-sizing: border-box;
+}
+
+/* Container for the entire shop category */
+.shop-category {
+  
+  
+  background-color: #f5f5f5;
+  margin: 200px auto 0; /* Center the container */
+  align-items: center;
+  width: 100%;
+
+}
+
+/* Banner image at the top */
+.shop-category img {
+  width: calc(100% - 20px);
+
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* Sorting and product count display */
+.shopcategory-indexSort {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ddd;
+}
+
+.shopcategory-indexSort p {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Sort dropdown container */
+.shopcategory-sort {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.shopcategory-sort img {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.shopcategory-sort:hover {
+  color: #ff6347; /* Change color on hover */
+}
+
+.shopcategory-sort:hover img {
+  transform: rotate(180deg);
+}
+
+/* Grid layout for products */
+.shopcategory-products {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two items per row */
+  gap: 20px; /* Space between items */
+  padding: 0; /* No padding needed here */
+}
+
+/* Individual product items */
+.shopcategory-products .item {
+  
+  width: 100%; /* Adjust width to fit within the container */
+  width: 700px; /* Maximum width for items */
+  height: 700px; /* Fixed height for all items */
+  background: #fff; /* White background for items */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 10px; /* Rounded corners */
+  overflow: hidden; /* Hide overflow to ensure images fit nicely */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+  position: relative; /* For positioning details over image */
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center content horizontally */
+  padding: 0; /* Remove any default padding */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect for product items */
+.shopcategory-products .item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Product image */
+.shopcategory-products .item img {
+  padding: 60px;
+  width: 100%; /* Full width of the item container */
+  height: 600px; /* Fixed height for all images */
+  object-fit: cover; /* Ensure the image covers the box, maintaining aspect ratio */
+  object-position: center; /* Center the image */
+  display: block; /* Ensures no extra space below the image */
+}
+
+/* Product name */
+.shopcategory-products .item h3 {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #333;
+  text-align: center;
+}
+
+/* Product prices */
+.shopcategory-products .item .price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: #777;
+}
+
+.shopcategory-products .item .price .new-price {
+  color: #ff6347;
+  margin-right: 10px;
+}
+
+.shopcategory-products .item .price .old-price {
+  text-decoration: line-through;
+}
+
+/* Responsive Design for screens <= 1500px */
+@media (max-width: 1500px) {
+  
+  .shopcategory-indexSort {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .shopcategory-products {
+    grid-template-columns: repeat(2, 1fr); /* Two items per row */
+  }
+  .shopcategory-products .item {
+    max-width: 100%; /* Adjust width to fit within the container */
+  }
+}
+
+/* Responsive Design for screens <= 1300px */
+@media (max-width: 1300px) {
+  
+  .shopcategory-indexSort {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .shopcategory-products {
+    grid-template-columns: repeat(2, 1fr); /* Two items per row */
+  }
+  .shopcategory-products .item {
+    width: 400px;
+    height: 500px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+}
+
+/* Responsive Design for screens <= 768px */
+@media (max-width: 878px) {
+  .banner {
+    display: none; /* Hide banner on smaller screens */
+  }
+  .shop-category {
+    padding: 0 10px; /* Adjust padding for smaller screens */
+    margin-top: 300px;
+  }
+  .shopcategory-indexSort {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .shopcategory-products {
+    grid-template-columns: repeat(1, 1fr); /* One item per row */
+  }
+  .shopcategory-products .item {
+    width: 400px; /* Adjust width for smaller screens */
+    height: 500px; /* Maintain aspect ratio */
+    padding: 40px;
+  }
+}
+
+/* Responsive Design for screens <= 480px */
+@media (max-width: 480px) {
+  .shop-category {
+    padding: 0 5px; /* Adjust padding for very small screens */
+  }
+  .shopcategory-indexSort {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .shopcategory-products {
+    grid-template-columns: repeat(1, 1fr); /* One item per row */
+  }
+  .shopcategory-products .item {
+    width: 300px; /* Adjust width for very small screens */
+    height: 400px; /* Maintain aspect ratio */
+    padding: 10px;
+    margin: 0 auto;
+  }
+}

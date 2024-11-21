@@ -1,0 +1,98 @@
+.new_collections {
+  padding: 40px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.new_collections h1 {
+  font-size: 2.5rem;
+  color: #171717;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
+}
+
+/* Slider Styles for Large Screens */
+.slider {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  display: flex; /* Add display: flex to center the items */
+  flex-wrap: wrap; /* Add flex-wrap to wrap items to the next line */
+  justify-content: center; /* Add justify-content to center the items */
+}
+
+.slider-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.slider-content {
+  display: flex;
+  width: 100%; /* Remove the 200% width to show all items */
+}
+
+.new_collection-item {
+  flex: 0 0 calc(20% - 20px); /* Adjust the width and add margin */
+  margin: 10px;
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  
+}
+
+.new_collection-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Add the sliding animation back */
+.slider-content {
+  animation: slide 30s linear infinite;
+}
+
+/* Keyframes for the sliding effect */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Slide half the width */
+  }
+}
+
+/* Media Queries for smaller screens */
+@media (max-width: 1200px) {
+  .new_collection-item {
+    flex: 0 0 calc(25% - 20px); /* Adjust the width for smaller screens */
+  }
+}
+
+@media (max-width: 992px) {
+  .new_collection-item {
+    flex: 0 0 calc(33.33% - 20px); /* Adjust the width for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .new_collection-item {
+    flex: 0 0 calc(50% - 20px); /* Show 2 items per row */
+  }
+}
+
+@media (max-width: 480px) {
+  .new_collection-item {
+    
+    display: flex;
+    flex-direction: column;
+  }
+  .slider-content {
+    animation: none;
+  }
+  
+  
+  
+}

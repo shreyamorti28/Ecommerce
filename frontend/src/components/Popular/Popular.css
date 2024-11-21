@@ -1,0 +1,192 @@
+/* Container for the items */
+
+
+.popular-item {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+  gap: 10px; /* Spacing between items */
+
+  padding-bottom: 100px; /* Add padding to avoid collision with the footer */
+  place-items: center;
+  
+ 
+  
+}
+
+body {
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Heading style */
+.popular h1 {
+  margin-bottom: 10px;
+  color: #171717;
+  font-size: 2.5rem; 
+  font-weight: 600;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Item styles */
+.item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  background-color: white; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  overflow: hidden; 
+  width: auto;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Ensure content is spaced properly */
+  padding: 0; 
+  object-fit: cover;
+  
+}
+
+/* Image container */
+.popular .image-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Item title */
+.item h2 {
+  font-size: 22px; /* Ensure clear font size for the item title */
+  margin: 16px 0; /* Margin around title */
+  color: #333;
+  min-height: 40px; /* Ensure enough space for longer titles */
+}
+
+/* Pricing section */
+.price {
+  font-size: 20px; /* Clear font size for prices */
+  font-weight: bold;
+  margin: 12px 0; /* Margin around pricing */
+}
+
+/* New price style */
+.new-price {
+  color: #333;
+  margin-right: 8px;
+}
+
+/* Old price style (strikethrough) */
+.old-price {
+  color: #888;
+  text-decoration: line-through;
+}
+
+/* Hover effect for the item */
+.item:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect for the image */
+.item:hover .item-image {
+  opacity: 0.8; /* Slightly fade the image on hover */
+}
+.new_collection-item{
+  width: 400px;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 1280px) {
+  .popular-item {
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px; /* Adjust max width */
+    padding-bottom: 80px; /* Adjust bottom padding */
+    width: fit-content;
+  }
+
+  .popular h1 {
+    font-size: 45px; /* Adjust font size */
+  }
+
+  .item h2 {
+    font-size: 20px; /* Adjust item title size */
+    min-height: 40px; /* Ensure enough space for item titles */
+  }
+
+  .price {
+    font-size: 18px; /* Adjust price size */
+  }
+}
+
+/* For screens with a max-width of 1024px */
+@media (max-width: 1024px) {
+  .popular-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .popular h1 {
+    font-size: 40px; /* Adjust font size */
+  }
+
+  .item h2 {
+    font-size: 18px; /* Adjust item title size */
+    min-height: 40px; /* Ensure enough space for item titles */
+  }
+
+  .price {
+    font-size: 16px; /* Adjust price size */
+  }
+}
+
+/* For screens with a max-width of 800px */
+@media (max-width: 800px) {
+  .popular-item {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .popular h1 {
+    font-size: 36px; /* Adjust font size */
+  }
+
+  .item h2 {
+    font-size: 16px; /* Adjust item title size */
+    min-height: 40px; /* Ensure enough space for item titles */
+  }
+}
+
+/* For screens with a max-width of 500px */
+@media (max-width: 500px) {
+  .popular-item {
+    display: flex;
+    flex-direction: column;
+    
+    padding-bottom: 40px; /* Adjust bottom padding */
+    padding: 10px;
+  }
+
+  .popular h1 {
+    font-size: 30px; /* Adjust font size */
+  }
+
+  .item h2 {
+    font-size: 14px; /* Adjust item title size */
+    min-height: 40px; /* Ensure enough space for item titles */
+  }
+
+  .price {
+    font-size: 12px; /* Adjust price size */
+  }
+}

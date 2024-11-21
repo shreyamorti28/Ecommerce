@@ -1,0 +1,128 @@
+/* Basic styles for DescriptionBox */
+.descriptionbox {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Navigator styles */
+  .descriptionbox-navigator {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+  }
+  
+  .descriptionbox-nav-box {
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .descriptionbox-nav-box.fade {
+    color: #aaa;
+  }
+  
+  .descriptionbox-description,
+  .descriptionbox-reviews {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .review-form {
+    margin-top: 20px;
+  }
+  
+  .review-input textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  .rating-input {
+    margin-top: 10px;
+  }
+  
+  .stars {
+    display: flex;
+    cursor: pointer;
+  }
+  
+  .star {
+    font-size: 20px;
+    color: #ddd;
+    margin-right: 5px;
+  }
+  
+  .star.filled {
+    color: gold;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .descriptionbox {
+      padding: 15px;
+    }
+  
+    .descriptionbox-navigator {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .descriptionbox-nav-box {
+      padding: 8px;
+      font-size: 14px;
+    }
+  
+    .review-input textarea {
+      height: 80px;
+    }
+  
+    .stars {
+      font-size: 18px;
+    }
+  
+    button {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .descriptionbox {
+      padding: 10px;
+    }
+  
+    .descriptionbox-nav-box {
+      padding: 6px;
+      font-size: 12px;
+    }
+  
+    .review-input textarea {
+      height: 60px;
+    }
+  
+    .stars {
+      font-size: 16px;
+    }
+  
+    button {
+      padding: 6px 12px;
+      font-size: 12px;
+    }
+  }
+  

@@ -1,0 +1,76 @@
+/* General footer styling */
+.footer {
+    background-color: #f8d7da; /* Light pink background */
+    color: #333; /* Dark text for contrast */
+    padding: 40px 20px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-top: 2px solid #f5c6cb; /* Slightly darker pink border for elegance */
+    margin-top:50px;
+  }
+  
+  /* Footer logo styling */
+  .footer_logo img {
+    max-width: 300px; /* Adjust as needed */
+    height: auto;
+    margin-bottom: 20px; /* Space below the logo */
+  }
+  
+  /* Footer links styling */
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Space between items */
+  }
+  
+  .footer-links li {
+    font-size: 16px;
+    font-weight: 500; /* Slightly bolder for emphasis */
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links li:hover {
+    color: #d63384; /* Elegant pink color on hover */
+  }
+  
+  /* Social icons container styling */
+  .footer-social-icon {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between icons */
+    margin-bottom: 20px;
+  }
+  
+  .footer-icons-container img {
+    width: 50px; /* Adjust icon size as needed */
+    height: 50px; /* Consistent size */
+    border-radius: 50%; /* Circular icons */
+    padding: 15px; /* Space inside the circle */
+    background-color: #f5c6cb; /* Light pink background for icons */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .footer-icons-container img:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    background-color: #e0a9b6; /* Slightly darker pink on hover */
+  }
+  
+  /* Divider line styling */
+  .footer-divider {
+    border: none;
+    border-top: 1px solid #f5c6cb;
+    margin: 20px 0;
+    width: 80%; /* Make the divider shorter than full width */
+    margin: 20px auto; /* Center the divider */
+  }
+  
+  /* Copyright text styling */
+  .footer-copyright {
+    font-size: 14px;
+    color: #6c757d; /* Light gray for copyright text */
+  }
+  

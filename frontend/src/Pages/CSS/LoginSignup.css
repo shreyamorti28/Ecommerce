@@ -1,0 +1,147 @@
+/* Ensure you have a suitable font-family, e.g., Google Fonts like 'Poppins' or 'Lora' */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Container for the login/signup page */
+.loginsignup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full viewport height */
+  background-color: #fce4ec; /* Very light pink background color for the page */
+  margin-top: 100px;
+
+}
+
+/* Main container for the form */
+.loginsignup-container {
+  background-color: #ffffff; /* White background for the form */
+  padding: 30px;
+  border-radius: 12px; /* More rounded corners for a softer look */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Subtle shadow for added depth */
+  max-width: 400px; /* Maximum width of the form */
+  width: 100%;
+  font-family: 'Poppins', sans-serif; /* Elegant and modern font */
+}
+
+/* Heading styling */
+.loginsignup-container h1 {
+  margin-bottom: 20px;
+  font-size: 28px; /* Larger font size for the heading */
+  color: #ec407a; /* Light pink color for the heading */
+  text-align: center; /* Center align heading */
+  font-weight: 600; /* Bold heading */
+}
+
+/* Input fields styling */
+.loginsignup-feilds input {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  border: 1px solid #f8bbd0; /* Light pink border color */
+  border-radius: 6px; /* Rounded corners for inputs */
+  box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+  font-size: 16px;
+  color: #333; /* Dark text color for readability */
+  font-family: 'Poppins', sans-serif; /* Consistent font for inputs */
+}
+
+/* Button styling */
+.loginsignup-container button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 6px; /* Rounded corners for the button */
+  background-color: #ec407a; /* Light pink button color */
+  color: #ffffff; /* White text color */
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: 'Poppins', sans-serif; /* Consistent font for button */
+}
+
+.loginsignup-container button:hover {
+  background-color: #d81b60; /* Slightly darker pink shade on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Login link styling */
+.loginsignup-login {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 16px;
+  color: #ec407a; /* Light pink color for the link */
+}
+
+.loginsignup-login span {
+  color: #d81b60; /* Darker pink color for the link text */
+  cursor: pointer;
+  font-weight: 600; /* Bold link text */
+  text-decoration: underline;
+}
+
+.loginsignup-login span:hover {
+  color: #c2185b; /* Even darker shade on hover */
+}
+
+/* Agree terms styling */
+.loginsignup-agree {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666; /* Light text color */
+}
+
+.loginsignup-agree input {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .loginsignup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    background-color: #fce4ec; /* Very light pink background color for the page */
+    margin-top: 150px; /* Increase the margin to add more space from the navbar */
+  }
+}
+
+@media (max-width: 500px) {
+  .loginsignup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    background-color: #fce4ec; /* Very light pink background color for the page */
+    margin-top: 150px; /* Increase the margin to add more space from the navbar */
+  }
+  
+  .loginsignup-container {
+    padding: 20px;
+    width: 300px;
+    height: auto;
+
+  }
+
+  .loginsignup-container h1 {
+    font-size: 24px;
+  }
+
+  .loginsignup-feilds input {
+    font-size: 14px;
+  }
+
+  .loginsignup-container button {
+    font-size: 14px;
+  }
+
+  .loginsignup-login {
+    font-size: 14px;
+  }
+
+  .loginsignup-agree {
+    font-size: 12px;
+  }
+}

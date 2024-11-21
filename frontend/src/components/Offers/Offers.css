@@ -1,0 +1,100 @@
+/* Offers.css */
+
+/* Import fonts from Google Fonts or include them in your project */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@400;700&display=swap");
+
+.offers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 80px;
+  background: linear-gradient(90deg, #f7f7f7 0%, #ffffff 100%);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.offers-left {
+  flex: 1;
+  padding: 20px;
+  color: #2c3e50; /* Dark text color to match Hero section */
+  font-family: "Roboto", sans-serif; /* Consistent font with Hero section */
+}
+
+.offers-left h1 {
+  font-size: 48px; /* Slightly smaller than Hero for balance */
+  font-weight: 700;
+  margin-bottom: 15px;
+  line-height: 1.1;
+  color: #2c3e50;
+  font-style: "Playfair Display", serif;
+  text-transform: uppercase;
+}
+
+.offers-left p {
+  font-size: 20px;
+  color: #34495e;
+  margin-bottom: 25px;
+  line-height: 1.4;
+}
+
+.offers-left button {
+  font-size: 18px;
+  color: #ffffff;
+  background-color: #e94e77; /* Bright color for the button */
+  padding: 15px 30px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.offers-left button:hover {
+  background-color: #d43f66; /* Darker shade for hover effect */
+  color: #ffffff;
+}
+
+.offers-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.offers-right img {
+  width: 100%;
+  max-width: 600px; /* Max width to ensure image scales well */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .offers {
+    flex-direction: column;
+    padding: 30px;
+    text-align: center;
+  }
+
+  .offers-left h1 {
+    font-size: 36px;
+  }
+
+  .offers-left p {
+    font-size: 18px;
+  }
+
+  .offers-left button {
+    font-size: 16px;
+    padding: 12px 25px;
+  }
+
+  .offers-right img {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+}
