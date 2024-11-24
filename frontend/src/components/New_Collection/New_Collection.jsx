@@ -8,7 +8,7 @@ const NewCollection = () => {
 
   useEffect(() => {
     // Fetch the items from the API
-    fetch('http://localhost:4000/newcollections')
+    fetch('https://ecommerce-tc7k.onrender.com//newcollections')
       .then((response) => response.json())
       .then((data) => setNew_collection(data));
   }, []);
