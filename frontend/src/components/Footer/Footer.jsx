@@ -4,6 +4,7 @@ import instagram from '../Assets/instagram_icon.jpg';
 import pinterest from '../Assets/pinterest_icon.png';
 import whatsapp from '../Assets/whatsapp_icon.jpg';
 import './Footer.css';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -12,10 +13,10 @@ const Footer = () => {
         <img src={footer_logo} alt="Shopper Logo"/>
       </div>
       <ul className='footer-links'>
-        <li>Company</li>
-        <li>Products</li>
-        <li>About</li>
-        <li>Contact</li>
+        <li><Link to="/" className="footer-link">Home</Link></li>
+        <li><Link to="/T-shirt" className="footer-link">T-shirt</Link></li>
+        <li><Link to="/Jeans" className="footer-link">Jeans</Link></li>
+        <li><Link to="/Shoes" className="footer-link">Shoes</Link></li>
       </ul>
       <div className='footer-social-icon'>
         <div className='footer-icons-container'>

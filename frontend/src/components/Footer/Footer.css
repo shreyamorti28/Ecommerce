@@ -6,7 +6,6 @@
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border-top: 2px solid #f5c6cb; /* Slightly darker pink border for elegance */
-    margin-top:50px;
   }
   
   /* Footer logo styling */
@@ -24,6 +23,7 @@
     display: flex;
     justify-content: center;
     gap: 30px; /* Space between items */
+    
   }
   
   .footer-links li {
@@ -31,8 +31,12 @@
     font-weight: 500; /* Slightly bolder for emphasis */
     cursor: pointer;
     transition: color 0.3s ease;
+    
   }
-  
+  .footer-link{
+    text-decoration: none;
+    color: #333;
+  }
   .footer-links li:hover {
     color: #d63384; /* Elegant pink color on hover */
   }

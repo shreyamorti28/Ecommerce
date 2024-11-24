@@ -1,77 +1,36 @@
+.new_collections {
+  text-align: center;
+  overflow: hidden;
+}
 
+.slider {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
 
+.slider-wrapper {
+  display: flex;
+  width: max-content; 
+  will-change: transform; 
+}
+
+.new_collection-item {
+  flex: 0 0 auto; 
+  width: 300px; 
+  margin-right: 10px;
+}
+
+.new_collection-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .new_collections h1 {
   font-size: 2.5rem;
   color: #171717;
   font-weight: 700;
   font-family: 'Playfair Display', serif;
   margin-bottom: 20px;
-}
-
-/* Slider Styles for Large Screens */
-.slider {
-  
-  width: 100%;
-  display: flex; /* Add display: flex to center the items */
-  
-  justify-content: center; /* Add justify-content to center the items */
-  white-space: nowrap; 
-}
-
-.slider-wrapper {
-  display: flex;
-  width: 100%;
-}
-
-.slider-content {
-  display: flex;
-  width: 100%; /* Remove the 200% width to show all items */
-}
-
-.new_collection-item {
-  flex: 0 0 calc(20% - 20px); /* Adjust the width and add margin */
-  margin: 10px;
-  box-sizing: border-box;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  
-}
-
-.new_collection-item img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-
-
-.new_collections {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden; /* Hide overflowing items */
-  position: relative;
-  width: 100%;
-  align-items: center;
-}
-
-.slider-wrapper {
-  display: flex;
-  animation: slide 10s linear infinite; /* Duration adjusted dynamically */
-  will-change: transform;
-}
-
-@keyframes slide {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%); /* Adjust to slide all items */
-  }
-}
-
-.new_collection-item {
-  width:400px;
 }

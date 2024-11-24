@@ -7,12 +7,21 @@ const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
 const fs = require("fs");
+const nodemailer = require('nodemailer');
+const bcrypt = require("bcryptjs");
 
 app.use(express.json());
 app.use(cors());
 
+
+
+
 // MongoDB connection with error handling
-mongoose.connect("mongodb+srv://devloper:iamdev@cluster0.oer9m.mongodb.net/Ecommerce")
+mongoose.connect("mongodb+srv://devloper:iamdev@cluster0.oer9m.mongodb.net/Ecommerce",{
+    connectTimeoutMS: 30000, // 30 seconds
+    socketTimeoutMS: 45000, // 45 seconds
+    serverSelectionTimeoutMS: 5000,
+  })
   .then(() => console.log("MongoDB connected"))
   .catch((error) => console.error("MongoDB connection error:", error));
 
@@ -20,7 +29,7 @@ mongoose.connect("mongodb+srv://devloper:iamdev@cluster0.oer9m.mongodb.net/Ecomm
 const uploadDir = './upload/images';
 if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir, { recursive: true });
-}
+}   
 
 app.get("/", (req, res) => {
   res.send("Express App is running");
@@ -71,54 +80,70 @@ const Users= mongoose.model('Users',{
 
 })
 
-app.post('/signup',async(req,res)=>{
-    let check=await Users.findOne({email:req.body.email});
-    if(check){
-        return res.status(400).json({success:false,errors:"existing user found with same email address"})
+const validatePassword = (password) => {
+    // Password should contain at least one lowercase, one uppercase, one digit, and one special character
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    return passwordRegex.test(password);
+  };
+  
+  // Signup endpoint
+  app.post('/signup', async (req, res) => {
+    const { username, email, password } = req.body;
+  
+    if (!username || !email || !password) {
+      return res.status(400).json({ success: false, errors: "All fields are required" });
     }
-    let cart={};
-    for(let i=0;i<300;i++){
-        cart[i]=0;
+  
+    if (!validatePassword(password)) {
+      return res.status(400).json({ success: false, errors: "Password must be at least 8 characters long, contain a number, an uppercase letter, a lowercase letter, and a special character." });
     }
-    const user=new Users({
-        name:req.body.username,
-        email:req.body.email,
-        password:req.body.password,
-        cartData:cart,
-
-    })
+  
+    let check = await Users.findOne({ email });
+    if (check) {
+      return res.status(400).json({ success: false, errors: "User already exists" });
+    }
+  
+    // Hash the password
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+  
+    const user = new Users({ 
+      name: username, 
+      email, 
+      password: hashedPassword 
+    });
     await user.save();
-    const data={
-        user:{
-            id:user.id
-        }
+    
+    const data = { user: { id: user.id } };
+    const token = jwt.sign(data, 'secret_ecom');
+    res.json({ success: true, token });
+  });
+  
+  // Login endpoint
+  app.post('/login', async (req, res) => {
+    const { email, password } = req.body;
+  
+    if (!email || !password) {
+      return res.status(400).json({ success: false, errors: "Email and Password are required" });
     }
-    const token=jwt.sign(data,'secret_ecom');
-    res.json({success:true,token})
-})
-
-app.post('/login',async(req,res)=>{
-    let user=await Users.findOne({email:req.body.email})
-    if(user){
-        const passCampare=req.body.password===user.password;
-        if(passCampare){
-            const data={
-                user:{
-                    id:user.id
-                }
-            }
-            const token=jwt.sign(data,'secret_ecom');
-            res.json({success:true,token});
-
-        }
-        else{
-            res.json({success:true,error:"Wrong Password"});
-        }
+  
+    const user = await Users.findOne({ email });
+    if (!user) {
+      return res.status(400).json({ success: false, errors: "Invalid email" });
     }
-    else{
-        res.json({success:false,errors:"Wrong Email Id"})
+  
+    // Compare hashed password
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+      return res.status(400).json({ success: false, errors: "Invalid password" });
     }
-})
+  
+    const data = { user: { id: user.id } };
+    const token = jwt.sign(data, 'secret_ecom');
+    res.json({ success: true, token });
+  });
+  
+  
 
 const Product=mongoose.model("Product",{
     id:{
@@ -189,28 +214,88 @@ const fetchUser=async(req,res,next)=>{
 }
 
 
-app.post('/addtocart',fetchUser, async (req, res) => {
-    console.log("Added",req.body.itemId)
-    let userData=await Users.findOne({_id:req.user.id});
-    userData.cartData[req.body.itemId]+=1;
-    await Users.findOneAndUpdate({_id:req.user.id},{cartData:userData.cartData});
-    res.send("Added")   
+app.post('/addtocart', fetchUser, async (req, res) => {
+    try {
+        const { itemId } = req.body;
+
+        if (!itemId) {
+            return res.status(400).json({ success: false, errors: "Item ID is required" });
+        }
+
+        let userData = await Users.findOne({ _id: req.user.id });
+
+        if (!userData) {
+            return res.status(404).json({ success: false, errors: "User not found" });
+        }
+
+        // Initialize cartData if it doesn't exist
+        if (!userData.cartData) {
+            userData.cartData = {};
+        }
+
+        // Ensure item is in cartData
+        if (!userData.cartData[itemId]) {
+            userData.cartData[itemId] = 0;
+        }
+
+        // Increment quantity of the item
+        userData.cartData[itemId] += 1;
+
+        // Save updated cartData
+        await Users.findOneAndUpdate({ _id: req.user.id }, { cartData: userData.cartData });
+
+        res.json({ success: true, message: "Item added to cart" });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ success: false, errors: "Server error" });
+    }
 });
 
-app.post('/removefromcart',fetchUser, async (req, res) => {
-    console.log("removed",req.body.itemId)
-    let userData=await Users.findOne({_id:req.user.id});
-    if(userData.cartData[req.body.itemId]>0)
-    userData.cartData[req.body.itemId]-=1;
-    await Users.findOneAndUpdate({_id:req.user.id},{cartData:userData.cartData});
-    res.send("removed")
+app.post('/removefromcart', fetchUser, async (req, res) => {
+    try {
+        const { itemId } = req.body;
+
+        if (!itemId) {
+            return res.status(400).json({ success: false, errors: "Item ID is required" });
+        }
+        let userData = await Users.findOne({ _id: req.user.id });
+
+        if (!userData) {
+            return res.status(404).json({ success: false, errors: "User not found" });
+        }
+
+        // Ensure cartData exists
+        if (!userData.cartData || !userData.cartData[itemId]) {
+            return res.status(400).json({ success: false, errors: "Item not found in cart" });
+        }
+
+        // Decrement quantity of the item, ensuring it's not below 0
+        if (userData.cartData[itemId] > 0) {
+            userData.cartData[itemId] -= 1;
+        }
+
+        // Save updated cartData
+        await Users.findOneAndUpdate({ _id: req.user.id }, { cartData: userData.cartData });
+
+        res.json({ success: true, message: "Item removed from cart" });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ success: false, errors: "Server error" });
+    }
 });
 
-app.post('/getcart',fetchUser,async(req,res)=>{
+app.post('/getcart', fetchUser, async (req, res) => {
     console.log("GetCart");
-    let userData=await Users.findOne({_id:req.user.id});
-    res.json(userData.cartData);
-})
+    try {
+        let userData = await Users.findOne({ _id: req.user.id });
+        if (!userData) {
+            return res.status(404).json({ success: false, message: "User not found" });
+        }
+        res.json(userData.cartData);
+    } catch (error) {
+        res.status(500).json({ success: false, message: "Error fetching cart data", error });
+    }
+});
 
 app.get('/relatedproduct/:id', async (req, res) => {
     try {
@@ -295,3 +380,36 @@ app.listen(port, (error) => {
         console.log("Error: " + error);
     }
 });
+const Newsletter = mongoose.model("Newsletter", {
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    date: {
+      type: Date,
+      default: Date.now,
+    },
+  });
+  
+  app.post("/subscribe", async (req, res) => {
+    const { email } = req.body;
+  
+    if (!email) {
+      return res.status(400).json({ success: false, message: "Email is required." });
+    }
+  
+    try {
+      const existingSubscriber = await Newsletter.findOne({ email });
+      if (existingSubscriber) {
+        return res.status(400).json({ success: false, message: "Email is already subscribed." });
+      }
+  
+      const subscription = new Newsletter({ email });
+      await subscription.save();
+      res.status(201).json({ success: true, message: "Subscribed successfully!" });
+    } catch (error) {
+      res.status(500).json({ success: false, message: "Subscription failed.", error });
+    }
+  });
+  

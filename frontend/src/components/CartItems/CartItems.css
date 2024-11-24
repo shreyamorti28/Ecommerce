@@ -9,7 +9,7 @@
   max-width: 1200px;
   margin: 40px auto;
   position: relative;
-  margin-top: 250px;
+  margin-top: 300px;
 }
 
 /* Ensure no overlap with header */
@@ -221,6 +221,8 @@ hr {
 @media (max-width: 500px) {
   .cartitems {
     padding: 20px;
+    margin-top: 200px;
+  
   }
   .cartitems-format-main p{
     display: none;

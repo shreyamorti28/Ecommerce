@@ -39,12 +39,19 @@
     cursor: pointer;
     gap: 3px;
     justify-content: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
 
    
 }
-.nav-menu li:hover{
-    color: hsl(5, 100%, 80%);
-}
+.nav-menu li.active-menu {
+    background-color: pink; /* Sets the pink background */
+    color: white; /* Optional: change text color for contrast */
+    font-weight: bold; /* Optional: make text bold */
+    border-radius: 15px; /* Optional: more rounding for emphasis */
+    width:100px;
+    height:50px;
+  }
+
 .nav-menu li a {
     text-decoration: none; /* Removes the underline */
     color: inherit; /* Inherits the text color from its parent */
@@ -113,7 +120,7 @@
 
 
 
-@media (max-width: 882px) {
+@media (max-width: 1000px) {
     .navbar {
         flex-direction: column;
         align-items: flex-start;

@@ -1,6 +1,9 @@
 /* Ensure you have a suitable font-family, e.g., Google Fonts like 'Poppins' or 'Lora' */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
+.root{
+  background-color: #fce4ec; 
+  
+}
 /* Container for the login/signup page */
 .loginsignup {
   display: flex;
@@ -8,12 +11,15 @@
   align-items: center;
   min-height: 100vh; /* Full viewport height */
   background-color: #fce4ec; /* Very light pink background color for the page */
-  margin-top: 100px;
+  margin-top: 150px;
 
 }
 
 /* Main container for the form */
 .loginsignup-container {
+  display: flex;
+  flex-direction: column;
+  margin-top:80px;
   background-color: #ffffff; /* White background for the form */
   padding: 30px;
   border-radius: 12px; /* More rounded corners for a softer look */
@@ -21,6 +27,7 @@
   max-width: 400px; /* Maximum width of the form */
   width: 100%;
   font-family: 'Poppins', sans-serif; /* Elegant and modern font */
+  margin-bottom: 20px;
 }
 
 /* Heading styling */
