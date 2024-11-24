@@ -5,10 +5,10 @@ import './New_Collection.css';
 const NewCollection = () => {
   const [new_collection, setNew_collection] = useState([]);
   const sliderRef = useRef(null);
-
+S
   useEffect(() => {
     // Fetch the items from the API
-    fetch('https://ecommerce-tc7k.onrender.com//newcollections')
+    fetch('https://ecommerce-tc7k.onrender.com/newcollections')
       .then((response) => response.json())
       .then((data) => setNew_collection(data));
   }, []);
