@@ -8,7 +8,7 @@ const NewCollection = () => {
 S
   useEffect(() => {
     // Fetch the items from the API
-    fetch('https://ecommerce-tc7k.onrender.com/newcollections')
+    fetch('${process.env.REACT_APP_BACKEND_URL}/newcollections')
       .then((response) => response.json())
       .then((data) => setNew_collection(data));
   }, []);
