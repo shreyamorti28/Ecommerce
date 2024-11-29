@@ -47,10 +47,6 @@ Welcome to my eCommerce website project! This application is built using the **M
 
 ---
 
-## **Project Showcase** 📸
 
-![Product Showcase](./Ecommerce.gif)
-
-![Product Showcase - Small Screen](./Ecommerce_small_screen.gif)
 
 
