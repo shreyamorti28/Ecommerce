@@ -20,7 +20,7 @@ const LoginSignup = () => {
     }
 
     let responseData;
-    await fetch('https://ecommerce-tc7k.onrender.com/login', {
+    await fetch(`https://ecommerce-tc7k.onrender.com/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -43,7 +43,7 @@ const LoginSignup = () => {
 
   const signup = async () => {
     let responseData;
-    await fetch('https://ecommerce-tc7k.onrender.com/signup', {
+    await fetch(`https://ecommerce-tc7k.onrender.com/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
