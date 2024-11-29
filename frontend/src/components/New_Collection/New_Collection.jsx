@@ -4,13 +4,17 @@ import './New_Collection.css';
 
 const NewCollection = () => {
   const [new_collection, setNew_collection] = useState([]);
+  const [loading, setLoading] = useState(true); // Loading state
   const sliderRef = useRef(null);
-  
+
   useEffect(() => {
     // Fetch the items from the API
     fetch(`https://ecommerce-tc7k.onrender.com/newcollections`)
       .then((response) => response.json())
-      .then((data) => setNew_collection(data));
+      .then((data) => {
+        setNew_collection(data);
+        setLoading(false); // Stop loading when data is fetched
+      });
   }, []);
 
   useEffect(() => {
@@ -47,21 +51,27 @@ const NewCollection = () => {
   return (
     <div className="new_collections">
       <h1>New Collections</h1>
-      <div className="slider">
-        <div className="slider-wrapper" ref={sliderRef}>
-          {items.map((item, i) => (
-            <div className="new_collection-item" key={i}>
-              <Item
-                id={item.id}
-                name={item.name}
-                image={item.image}
-                new_price={item.new_price}
-                old_price={item.old_price}
-              />
-            </div>
-          ))}
+      {loading ? (
+        <div className="loading-message">
+          <p className="loading-text">Please wait to see beautiful items...</p>
         </div>
-      </div>
+      ) : (
+        <div className="slider">
+          <div className="slider-wrapper" ref={sliderRef}>
+            {items.map((item, i) => (
+              <div className="new_collection-item" key={i}>
+                <Item
+                  id={item.id}
+                  name={item.name}
+                  image={item.image}
+                  new_price={item.new_price}
+                  old_price={item.old_price}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
